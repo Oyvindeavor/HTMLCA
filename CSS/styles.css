@@ -1,4 +1,5 @@
-/* Some Import bullshit goes here fonts etc*/
+/* importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
 * {
   -moz-box-sizing: border-box; /* Firefox*/
@@ -6,6 +7,45 @@
   margin: 0; /* put this here to remove margin for all elements */
   padding: 0; /*put this here to remove padding for all elements*/
 }
+
+
+/* Typography */
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: .0;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: .0;
+}
+
+h3,h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: .0;
+}
+
+p{
+    font-family: 'Lora', serif;
+    max-width: 40em; /* This is to control the line length on all text with the p tag*/
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+
+}
+
+
 
 body {
   min-height: 100vh; /* put this here to make the site be min 100 viewport height*/
@@ -27,9 +67,11 @@ header {
   background-color: darkgray; /* Background color for header*/
 }
 
+
+
 main{
     grid-area: main; /* Assigns main to the grid area "main" */
-    border: solid black; /*Border for main !REMOVE THIS WHEN DONE!! */
+    /*border: solid black; /*Border for main !REMOVE THIS WHEN DONE!! */
 }
 
 footer{
@@ -41,25 +83,79 @@ img{
     max-width: 100%; /* Sets all the images to max width 100% this is to prevent them to move outside element*/
 }
 
+
 /* Styling for the wrapper inside the header*/
 header .header-container{
     display: flex; /* Makes the header-container a flex item*/
     align-items: center; /* Aligns everything inside the container to the center*/
     justify-content:space-between; /* Aligns everything inside the container to be left to right evenly across. */
-    width: calc(100% - 200px); /* Makes the container take up the whole WIDTH within the header minus 200px (100 on each side) */
-    margin: 0 100px; /* This makes the margin top 0 and 100px on each side to get the calc function above to work*/
+    margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
     height: 100%; /* Makes the container take up the whole HEIGHT within the header*/
-    border: solid black; /* Border for visualization !REMOVE THIS WHEN DONE!! */ 
+    /*border: solid black; /* Border for visualization !REMOVE THIS WHEN DONE!! */ 
 
-    
 }
+/* Styling for the list */
 .header-container ul li{
     border: solid black; /* For visualization */
     list-style-type: none; /* Removes any list types from the list */
     display: inline; /* Makes the list items display in a row */
-    margin-right: 10px; /*creates spacing between the nav items*/
-    
+    margin-right: 10px; /*creates spacing between the nav items*/    
 }
+
 .header-container ul li a{
     text-decoration: none; /* Removes text decoration (underline) from the anchor elements within the list. */
 }
+
+
+/* Main content */
+main .main-content{
+    margin-bottom: 30px;
+}
+
+.hero-section{
+    
+
+}
+
+/* Styling for the new releases section*/
+.new-releases{
+   display: flex;
+   justify-content: space-between;
+    
+    
+}
+/* styling for the images within the new-releases  container*/
+.new-releases img{
+    max-width: 15%; /* Sets the max width of all images within the new-releases container to 10% (this is to make them scale with aspect ratio)*/
+    border-radius: 20px;
+}
+
+.section2{
+   
+}
+
+.section3{
+   
+}
+
+.section4{
+    
+}
+
+.section5{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    border: solid black;
+    height: 300px;
+
+}
+
+.footer-container{
+    display: flex; /* Makes the footer-container an flex item*/
+    align-items: center;
+    justify-content: space-between;
+    /** border: solid black; /* For visualization*/
+    margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
+}
+
