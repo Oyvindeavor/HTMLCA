@@ -1,0 +1,65 @@
+/* Some Import bullshit goes here fonts etc*/
+
+* {
+  -moz-box-sizing: border-box; /* Firefox*/
+  box-sizing: border-box;
+  margin: 0; /* put this here to remove margin for all elements */
+  padding: 0; /*put this here to remove padding for all elements*/
+}
+
+body {
+  min-height: 100vh; /* put this here to make the site be min 100 viewport height*/
+  background-color: darkslategrey; /* background color for the whole page */
+  /* Grid layout for the homepage */
+  display: grid;
+  grid-template-columns: 100px auto 100px; /* 100px on the left and, right. and the middle is set to auto to stretch whatever content i put in.*/
+  grid-template-rows: 100px auto 100px; /* This sets the header 100px the main content to auto to stretch and the footer to 100px*/
+  grid-template-areas:
+    "header header header"
+    "....   main   ...."
+    "footer footer footer";
+    /* This gives me a 3 column and 3 row layout */
+  /*--------------------------------*/
+}
+
+header {
+  grid-area: header; /* Assigns header to the grid area "header" */
+  background-color: darkgray; /* Background color for header*/
+}
+
+main{
+    grid-area: main; /* Assigns main to the grid area "main" */
+    border: solid black; /*Border for main !REMOVE THIS WHEN DONE!! */
+}
+
+footer{
+    grid-area: footer; /* Assigns footer to the grid area footer*/
+    background-color: darkgray; /* Background color for the footer*/
+}
+
+img{
+    max-width: 100%; /* Sets all the images to max width 100% this is to prevent them to move outside element*/
+}
+
+/* Styling for the wrapper inside the header*/
+header .header-container{
+    display: flex; /* Makes the header-container a flex item*/
+    align-items: center; /* Aligns everything inside the container to the center*/
+    justify-content:space-between; /* Aligns everything inside the container to be left to right evenly across. */
+    width: calc(100% - 200px); /* Makes the container take up the whole WIDTH within the header minus 200px (100 on each side) */
+    margin: 0 100px; /* This makes the margin top 0 and 100px on each side to get the calc function above to work*/
+    height: 100%; /* Makes the container take up the whole HEIGHT within the header*/
+    border: solid black; /* Border for visualization !REMOVE THIS WHEN DONE!! */ 
+
+    
+}
+.header-container ul li{
+    border: solid black; /* For visualization */
+    list-style-type: none; /* Removes any list types from the list */
+    display: inline; /* Makes the list items display in a row */
+    margin-right: 10px; /*creates spacing between the nav items*/
+    
+}
+.header-container ul li a{
+    text-decoration: none; /* Removes text decoration (underline) from the anchor elements within the list. */
+}
