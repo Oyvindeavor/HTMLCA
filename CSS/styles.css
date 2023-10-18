@@ -1,15 +1,62 @@
-/* importing fonts */
+/* import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
 * {
-  -moz-box-sizing: border-box; /* Firefox*/
+  -moz-box-sizing: border-box; /* Firefox */
   box-sizing: border-box;
-  margin: 0; /* put this here to remove margin for all elements */
-  padding: 0; /*put this here to remove padding for all elements*/
+  margin: 0; 
+  padding: 0; 
+}
+
+/* -- Grid layout */
+body {
+  min-height: 100vh; /* put this here to make the site be min 100 viewport height */
+  background-color: darkslategrey; 
+  display: grid;
+  grid-template-columns: 100px auto 100px; /* 100px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
+  grid-template-rows: 100px auto 100px; /* This sets the header 100px the main content to auto to stretch and the footer to 100px */
+  grid-template-areas:
+    "header header header"
+    "....   main   ...."
+    "footer footer footer";
+}
+
+header {
+  grid-area: header; 
+  background-color: rgb(3, 3, 87); 
+}
+
+main{
+    grid-area: main; 
+   
+}
+
+footer{
+    grid-area: footer; 
+    background-color: darkgray; 
 }
 
 
-/* Typography */
+/* -- Global  styles */
+img{
+    max-width: 100%; /* Sets all the images to max width 100% this is to prevent them to move outside element */
+}
+
+.margin-column-row{ /* margin for columns below each column row added class to html element */
+    margin-bottom: 20px;
+}
+
+.list-remove-inline ul ,li, a{ /* Removes list decoration, styles and displays the list inline if not displayed in html it will revert to the style in the typography */
+    list-style-type: none;
+    text-decoration: none;
+    display: inline;
+}
+
+hr{
+    color: red;
+}
+
+/* -- Typography (following materiel design guidelines) */
 h1{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -36,7 +83,7 @@ h3,h4{
 
 p{
     font-family: 'Lora', serif;
-    max-width: 40em; /* This is to control the line length on all text with the p tag*/
+    max-width: 40em; /* -- This is to control the line length on all text with the p tag */
     font-size: 21px;
     font-weight: 400;
     line-height: 21px;
@@ -45,69 +92,45 @@ p{
 
 }
 
-
-
-body {
-  min-height: 100vh; /* put this here to make the site be min 100 viewport height*/
-  background-color: darkslategrey; /* background color for the whole page */
-  /* Grid layout for the homepage */
-  display: grid;
-  grid-template-columns: 100px auto 100px; /* 100px on the left and, right. and the middle is set to auto to stretch whatever content i put in.*/
-  grid-template-rows: 100px auto 100px; /* This sets the header 100px the main content to auto to stretch and the footer to 100px*/
-  grid-template-areas:
-    "header header header"
-    "....   main   ...."
-    "footer footer footer";
-    /* This gives me a 3 column and 3 row layout */
-  /*--------------------------------*/
+.header-container ul li a{
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #333333;
+    font-size: 21px;
 }
 
-header {
-  grid-area: header; /* Assigns header to the grid area "header" */
-  background-color: darkgray; /* Background color for header*/
+.quick-links{
+    
 }
 
 
-
-main{
-    grid-area: main; /* Assigns main to the grid area "main" */
-    /*border: solid black; /*Border for main !REMOVE THIS WHEN DONE!! */
-}
-
-footer{
-    grid-area: footer; /* Assigns footer to the grid area footer*/
-    background-color: darkgray; /* Background color for the footer*/
-}
-
-img{
-    max-width: 100%; /* Sets all the images to max width 100% this is to prevent them to move outside element*/
-}
-
-
-/* Styling for the wrapper inside the header*/
-header .header-container{
-    display: flex; /* Makes the header-container a flex item*/
-    align-items: center; /* Aligns everything inside the container to the center*/
+/* -- Styling for the wrapper inside the header */
+.header-container{
+    display: flex; /* Makes the header-container a flex item */
+    align-items: center; /* Aligns everything inside the container to the center */
     justify-content:space-between; /* Aligns everything inside the container to be left to right evenly across. */
     margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
-    height: 100%; /* Makes the container take up the whole HEIGHT within the header*/
-    /*border: solid black; /* Border for visualization !REMOVE THIS WHEN DONE!! */ 
-
-}
-/* Styling for the list */
-.header-container ul li{
-    border: solid black; /* For visualization */
-    list-style-type: none; /* Removes any list types from the list */
-    display: inline; /* Makes the list items display in a row */
-    margin-right: 10px; /*creates spacing between the nav items*/    
+    height: 100%; /* Makes the container take up the whole HEIGHT within the header */
 }
 
-.header-container ul li a{
-    text-decoration: none; /* Removes text decoration (underline) from the anchor elements within the list. */
+.nav-buttons{
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease-in-out;
+    padding: 10px 20px; /* Padding vertical 10px, horizontal 20px */
 }
 
+.nav-buttons:hover{
+  background-color: #009d9d;
+  color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
 
-/* Main content */
+.nav-buttons.active {
+    background-color: #008787;
+    color: white;
+  }
+
 main .main-content{
     margin-bottom: 30px;
 }
@@ -117,14 +140,14 @@ main .main-content{
 
 }
 
-/* Styling for the new releases section*/
+/* -- Styling for the new releases section*/
 .new-releases{
    display: flex;
    justify-content: space-between;
     
     
 }
-/* styling for the images within the new-releases  container*/
+/* -- styling for the images within the new-releases  container*/
 .new-releases img{
     max-width: 15%; /* Sets the max width of all images within the new-releases container to 10% (this is to make them scale with aspect ratio)*/
     border-radius: 20px;
