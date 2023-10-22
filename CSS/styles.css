@@ -1,5 +1,5 @@
 /* -- import fonts -- */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;500;700&display=swap');
 
 /* -- Global -- */
 * {
@@ -11,10 +11,15 @@
 
 /* -- Variables -- */
 :root {
-    --main-color: darkslategrey; 
-    --hdr-footer-color: #162638;
-    --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Lora', serif;
+    --main-color: darkslategrey; /* Main background color */
+    --hdr-footer-color: #162638; /* Header and footer color */
+    --font-primary: 'Poppins', sans-serif; /* Main Font */
+    --font-secondary: 'Lora', serif; /* Secondary font */
+    --headline-txt-color: #FFAE00; /* Headline text color (h2) */
+    --body-txt-color: black; /* Body text color (p) */
+    --icons-color: black; /* All google icons color */
+    --horizontal-line-color: #FFAE00; /* Horizontal line (hr tag) color */
+    /* -- Videos page -- */
 }
 
 
@@ -31,19 +36,9 @@ body {
     "footer footer footer";
 }
 
-header {
-  grid-area: header; 
-  background-color: var(--hdr-footer-color) 
-}
-
-main {
-    grid-area: main;   
-}
-
-footer {
-    grid-area: footer; 
-    background-color: var(--hdr-footer-color) 
-}
+header { grid-area: header; background-color: var(--hdr-footer-color) }
+main { grid-area: main; }
+footer { grid-area: footer; background-color: var(--hdr-footer-color) }
 
 img {
     max-width: 100%; /* Sets all the images to max width 100% to make them fluid */
@@ -52,41 +47,46 @@ img {
 
 /* -- Tools- classes reusables  */
 .margin-column-row { /* margin for columns below each column row*/
-    margin: 20px 0;
+    margin: 20px 0; /* Margin 20px top and bottom */
 }
 
-.list-remove-inline ul li,
-.list-remove-inline ul li a { /* Removes list decoration, styles and displays the list inline */
+.list-remove-inline > ul > li,
+.list-remove-inline > ul > li > a { /* Removes list decoration, styles and displays the list inline */
     list-style-type: none;
     text-decoration: none;
     display: inline; 
 }
 
-.material-symbols-outlined.size { /* Google icon size and styling reuse this*/
+.material-symbols-outlined.size { /* Google icon size and styling reuse this use the same size icon for all icons */
+    display: block; /* So my label text under it gets displayed on a new line */
     font-size: 40px;
-    color: black;
+    color: var(--icons-color)
+}
+
+.material-symbols-outlined:hover { /* All google icons fills when hovering */
+    font-variation-settings:
+    'FILL' 1
   }
 
 .horizontal-line {
     border: none;
     height: 5px;
-    background: #009d9d; 
+    background: var(--horizontal-line-color);
     margin: 20px 0; 
 }
 
 
-
-/* -- Typography (following materiel design guidelines) */
+/* -- Typography (following materiel design guidelines) -- */
 h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-weight: 700;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: .0;
+    font-size: 57px;
+    line-height: 64px;
+    letter-spacing: -0.25px;
 }
 
 h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-weight: 700;
     font-size: 28px;
     line-height: 36px;
@@ -94,7 +94,7 @@ h2 {
 }
 
 h3,h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
@@ -102,31 +102,55 @@ h3,h4 {
 }
 
 p { 
-    font-family: 'Lora', serif;
-    max-width: 40em; /* -- This is to control the line length on all text with the p tag */
+    font-family: var(--font-secondary);
+    max-width: 40em; /* This is to control the line length on all text with the p tag */
     font-size: 21px;
     font-weight: 400;
     line-height: 21px;
     letter-spacing: 0.5px;
     font-weight: 400;
+}
+
+label{
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
 
 }
 
 .header-container ul li a {
-    font-family: 'Lora', serif;
+    font-family: var(--font-secondary);
     font-weight: 700;
     color: #333333;
-    font-size: 21px;
+    font-size: 16px;
 }
 
 
-/* -- Styling for the wrapper inside the header -- */
+/* -- Styling for the wrapper inside the header this covers the whole header -- */
 .header-container {
     display: flex;
     align-items: center; 
-    justify-content:space-between; 
+    justify-content:space-between;
     margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
     height: 100%; 
+}
+
+.container-cart-login{ /* Wrapper for the cart and login icons */
+    display: flex;
+    
+}
+
+.icons-header, .icons-header a{ /*  the a tag for text decoration:none */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icons-header{
+    padding: 10px;
 }
 
 /* -- Navigation -- */
@@ -144,45 +168,47 @@ p {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-.nav-buttons.active { /* This adds color for buttons when "active" add it to each specific page */
+.nav-buttons.active { /* This adds color for buttons when "active" */
     background-color: #008787;
     color: white;
   }
 
 .hero-section {
-  position: relative;
-  display: inline-block;
+   border: solid black;
+   width: 100%;
+   height: 500px;
 }
 
-.text-hero{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-
-/* -- Styling for the new releases section*/
-.new-releases {
-   display: flex;
-   justify-content:space-evenly;
-   border-radius: 8px;
-   box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-}
-
-.new-releases img { /*  styling for the images within the new-releases  container */
-    max-width: 13%; 
-    border-radius: 20px;
+/* -- Styling for the new releases section -- */
+.new-releases { /* Container for the new releases section */
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+  }
+  
+  .new-releases-card {
     transition: transform 0.2s;
-}
-
-.new-releases img:hover{
+    max-width: 9%;
+    
+  }
+  
+  .new-releases-card:hover {
     transform: scale(1.1);
-}
+  }
+  
+  .new-releases-card > img {
+    border-radius: 20px;
+    transition: transform 0.2s; /* Add transition for the image */
+  }
+  
+  .new-releases-card:hover img {
+    transform: scale(1.1); /* Scale up the image on hover */
+    border-radius: 20px;
+  }
+  
 
-/* Footer */
+/* -- Footer -- */
 .footer-container {
     display: flex; 
     align-items: center;
@@ -191,19 +217,19 @@ p {
     height: 100%;  
 }
 
-/* Videos page (Merge videos.css in here when done) */
+/* -- Videos page (Merge videos.css in here when done) -- */
 
 
 
-/* About page css (Merge about.css in here when done) */
+/* -- About page css (Merge about.css in here when done) -- */
 
-/* Contact page css (Merge contact.css in here when done) */
+/* -- Contact page css (Merge contact.css in here when done) -- */
 
-/* Product page css (merge product-page.css in here when done) */
+/* -- Product page css (merge product-page.css in here when done) -- */
 
 
-/* Page specific layouts */ 
-/* create classes here for different page layouts. */
+/* -- Page specific layouts -- */ 
+/* -- create classes here for different page layouts. -- */
 .aboutme-grid{
     grid-template-areas: 
     "header"
@@ -212,4 +238,7 @@ p {
 }
 
 
-/* Typography smaller screens */
+/* -- Typography smaller screens -- */
+
+
+/*Media Querys
