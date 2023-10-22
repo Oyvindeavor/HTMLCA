@@ -22,6 +22,10 @@
     /* -- Videos page -- */
 }
 
+html {
+    overflow-x: hidden; /* Fix for scrollbar jumping */
+    margin-right: calc(-1 * (100vw - 100%)); /* Fix for scrollbar jumping */
+}
 
 /* -- Grid layout -- */
 body {
