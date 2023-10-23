@@ -33,16 +33,25 @@ body {
   background-color: var(--main-color);
   display: grid;
   grid-template-columns: 100px auto 100px; /* 100px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
-  grid-template-rows: 100px auto 100px; /* This sets the header 100px the main content to auto to stretch and the footer to 100px */
+  grid-template-rows: 100px auto 120px; /* This sets the header 100px the main content to auto to stretch and the footer to 100px */
   grid-template-areas:
     "header header header"
     "....   main   ...."
     "footer footer footer";
 }
 
-header { grid-area: header; background-color: var(--hdr-footer-color) }
-main { grid-area: main; }
-footer { grid-area: footer; background-color: var(--hdr-footer-color) }
+header { 
+    grid-area: header;
+    background-color:
+    var(--hdr-footer-color);
+ }
+main { 
+    grid-area: main;
+ }
+footer { 
+    grid-area: footer;
+    background-color: var(--hdr-footer-color) 
+}
 
 img {
     max-width: 100%; /* Sets all the images to max width 100% to make them fluid */
@@ -51,17 +60,26 @@ img {
 
 /* -- Tools- classes reusables  */
 .margin-column-row { /* margin for columns below each column row*/
-    margin: 20px 0; /* Margin 20px top and bottom */
+    margin: 20px 0; 
 }
 
-.list-remove-inline > ul > li,
-.list-remove-inline > ul > li > a { /* Removes list decoration, styles and displays the list inline */
+.list-remove > ul > li, /* Removes list decoration, list style, text decoration */
+.list-remove.decoration > ul > li > a { /* (.list-remove decoration) Removes list decoration, list styles, text decoration and displays the list inline */
     list-style-type: none;
     text-decoration: none;
     display: inline; 
 }
 
-.material-symbols-outlined.size { /* Google icon size and styling reuse this use the same size icon for all icons */
+
+.horizontal-line {
+    border: none;
+    height: 5px;
+    background: var(--horizontal-line-color);
+    margin: 20px 0; 
+}
+
+/* -- Icons -- */
+.material-symbols-outlined.size { /* (.material-symbols-outlined size) Google icon size and styling reuse this use the same size icon for all icons */
     display: block; /* So my label text under it gets displayed on a new line */
     font-size: 40px;
     color: var(--icons-color)
@@ -71,14 +89,6 @@ img {
     font-variation-settings:
     'FILL' 1
   }
-
-.horizontal-line {
-    border: none;
-    height: 5px;
-    background: var(--horizontal-line-color);
-    margin: 20px 0; 
-}
-
 
 /* -- Typography (following materiel design guidelines) -- */
 h1 {
@@ -124,15 +134,8 @@ label{
 
 }
 
-.header-container ul li a {
-    font-family: var(--font-secondary);
-    font-weight: 700;
-    color: #333333;
-    font-size: 16px;
-}
 
-
-/* -- Styling for the wrapper inside the header this covers the whole header -- */
+/* -- Styling for the wrapper for the header-- */
 .header-container {
     display: flex;
     align-items: center; 
@@ -141,7 +144,7 @@ label{
     height: 100%; 
 }
 
-.container-cart-login{ /* Wrapper for the cart and login icons */
+.container-cart-login{ /* Container for the cart and login icons */
     display: flex;
     
 }
@@ -151,11 +154,9 @@ label{
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    padding: 5px; /* Padding between icons */
 }
 
-.icons-header{
-    padding: 10px;
-}
 
 /* -- Navigation -- */
 .nav-buttons {
@@ -163,6 +164,10 @@ label{
     transition: background-color 0.3s ease;
     transition: transform 0.2s ease-in-out;
     padding: 10px 20px; /* Padding vertical 10px, horizontal 20px */
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: #333333;
+    font-size: 16px;
 
 }
 
@@ -220,6 +225,38 @@ label{
     margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
     height: 100%;  
 }
+
+.footer-items{ /* Container for items in the footer reuse this */
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    height: 100%;
+
+}
+
+.section-wrapper{
+    width: 100%;
+    border: solid black;
+    display: flex;
+}
+
+.text-section{
+    border: solid black;
+    width: 50%;
+}
+
+.img-section{
+    border: solid black;
+    width: 50%;
+    
+}
+
+
+
+
+
+
+
 
 /* -- Videos page (Merge videos.css in here when done) -- */
 
