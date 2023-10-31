@@ -23,14 +23,16 @@
       <div class="header-container">
         <div class="logo">
           <a href="index.html"><img src="media/logo.png" /></a>
+          <!--The logo is clickable and takes you back to the homepage-->
         </div>
 
         <nav class="inline">
-          <!---Removes list,text decoration, adds display inline-->
-
+          <!--Displays inline-->
           <ul class="no-list inline">
+            <!--Removes list, text decoration displays inline-->
             <li>
               <a class="nav-buttons" href="index.html">Home</a>
+              <!--Nav buttons-->
             </li>
 
             <li>
@@ -48,7 +50,9 @@
         </nav>
 
         <div class="container-cart-login">
+          <!--Container for the cart and login icons !!!! RENAME THIS I REMOVED LOGIN-->
           <div class="container-cart-login">
+            <!--!!!!RENAME THIS I REMOVED LOGIN-->
             <div class="icons-header">
               <!--Shopping cart google icons-->
               <a href="emptycart.html">
@@ -63,8 +67,10 @@
       </div>
     </header>
 
-    <main>
+    <main class="white-background">
+      <!--Makes the main White background fast and easy-->
       <ol class="breadcrumb-cart no-list inline margin-column-row">
+        <!--Breadcrumb-cart is container, no list removes list, inline displays inline, Margin-columns-row adds 10px above and bottom-->
         <li class="breadcrumb-item">
           <a href="index.html">Cart</a>
           <span class="material-symbols-outlined">navigate_next</span>
@@ -79,7 +85,6 @@
         <div class="form-container">
           <div class="form-wrapper">
             <form action="cart-payment.html">
-              <!-- Contact Information -->
               <h2>Contact Information</h2>
 
               <input
@@ -90,7 +95,6 @@
                 required
               />
 
-              <!-- Shipping Address -->
               <h2>Shipping Address</h2>
 
               <input
@@ -148,7 +152,6 @@
                 required
               />
 
-              <!-- Submit Button -->
               <div class="cart-spacebetween">
                 <button class="button">Return to cart</button>
                 <button class="button" id="submit" type="submit" value="submit">

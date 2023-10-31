@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;500;700&display=swap");
 
-/*-----------------------------------*/
-/*-------->>> =Resets <<<------------*/
-/*-----------------------------------*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*-------->>> =Resets <<<-------------*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 * {
   -moz-box-sizing: border-box; /* Firefox */
   box-sizing: border-box;
@@ -10,14 +10,14 @@
   padding: 0;
 }
 
-/*-----------------------------------*/
-/*-------->>> =Variables <<<---------*/
-/*-----------------------------------*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*-------->>> =Variables <<<----------*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 :root {
-  /* Fonts */
+  /* -------->>> =Fonts <<<-------------*/
   --font-primary: "Poppins", sans-serif; /* Main Font */
   --font-secondary: "Lora", serif; /* Secondary font */
-  /*---------------Colors-------------*/
+  /* -------->>> =Colors <<<-------------*/
   --main-color: #008787; /* Main background color */
   --hdr-footer-color: #ffae00; /* Header and footer color */
   --headline-txt-color: #ffae00; /* Headline text color (em emphasis) */
@@ -25,15 +25,14 @@
   --icons-color: black; /* All google icons color */
   --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
   --link-color: blue;
-  /*---------------Sizes--------------*/
+  /* -------->>> =Sizes<<<-------------*/
   --border-radius: 10px; /* Border radius for images/buttons/divs */
   --breadcrumb-icon-size: 10px; /* Breadcrumb icon size */
 }
 
-/* ------------------------------------------ */
-/* -------->>> =Global/Layout <<<------------ */
-/* ------------------------------------------ */
-
+/* -------------------------------------------- */
+/* -------->>> =Global & Layout <<<------------ */
+/* -------------------------------------------- */
 header {
   grid-area: header;
   background-color: var(--hdr-footer-color);
@@ -53,7 +52,7 @@ body {
   min-width: 100vw;
   background-color: var(--main-color);
   display: grid;
-  grid-template-columns: 150px auto 150px; /* 250px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
+  grid-template-columns: 150px auto 150px; /* 150px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
   grid-template-rows: 100px auto 150px; /* This sets the header 100px the main content to auto to stretch and the footer to 150px */
   grid-template-areas:
     "header header header"
@@ -78,13 +77,20 @@ p {
 }
 
 img {
-  max-width: 100%; /* Sets all the images to max width 100% to make them fluid */
+  max-width: 100%; /* Sets all the images to max width 100% to make them fluid, setting this to auto created problems */
   height: auto;
 }
 
 /* ------------------------------------------------*/
-/* -------->>> =Header/=Navigation <<<------------*/
+/* -------->>> =Header/=Navigation <<<-------------*/
 /* ------------------------------------------------*/
+
+.header-container {
+  /* This is the container for the header i place everything inside here */
+  justify-content: space-between;
+  margin: 0 150px; /* This makes the margin on bothe sides 150px this is to follow the main layout */
+  height: 100%;
+}
 
 .header-container,
 .icons-header {
@@ -92,14 +98,7 @@ img {
   align-items: center;
 }
 
-.header-container {
-  justify-content: space-between;
-  margin: 0 250px; /* This makes the margin top 0 and 100px on each side */
-  height: 100%;
-}
-
 .icons-header {
-  /*  the a tag for text decoration:none */
   flex-direction: column;
   padding: 5px; /* Padding between icons */
 }
@@ -130,7 +129,7 @@ img {
 /* -------->>> =Main content <<<------------*/
 /* -----------------------------------------*/
 
-/* --- =Hero Section --- */
+/* -------->>> =Hero section <<<-------------*/
 .hero-section {
   min-height: 400px;
   min-width: auto;
@@ -149,11 +148,12 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 100%;
 }
 
-/* -- Styling for the new releases section -- */
+/* -------->>> =New releases section <<<-------------*/
+
+/* -- Styling for the new releases section this section is right under the Hero section-- */
 .new-releases {
   display: flex;
   justify-content: space-evenly;
@@ -201,7 +201,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 250px; /* This makes the margin top 0 and 100px on each side */
+  margin: 0 150px; /* Margin 150px on both sides to follow the main layout */
   height: 100%;
 }
 
@@ -249,7 +249,7 @@ img {
 }
 
 .white-background {
-  background-color: #869898;
+  background-color: white; /* Simple white background class that i can use either on the body (for the margins) or on the main content/ divs */
 }
 
 .material-symbols-outlined.size {
@@ -309,13 +309,11 @@ p {
   flex-direction: column;
   background-color: #ffffff;
   padding: 2%;
-  width: 40%;
-  height: 600px;
+  width: 600px;
+  height: 100%;
   border-radius: 10px;
   box-shadow: 0 0 5px #ccc;
   border: 1px solid #fff;
-  margin: 0 auto;
-  position: absolute;
 }
 
 .form-wrapper {
@@ -332,16 +330,6 @@ p {
   border: none;
   box-shadow: 0 0 5px #ccc;
 }
-
-/* Form button styling */
-
-/* -- Videos page (Merge videos.css in here when done) -- */
-
-/* -- About page css (Merge about.css in here when done) -- */
-
-/* -- Contact page css (Merge contact.css in here when done) -- */
-
-/* -- Product page css (merge product-page.css in here when done) -- */
 
 /* ------------------------------------*/
 /* -------->>> =Cart <<<---------------*/

@@ -1,6 +1,6 @@
 :root {
   --body-text-color: #333;
-  --product-card-background-color: #ffffff;
+  --product-card-background-color: transparent;
   --button-background-color: #018c8c;
   --button-text-color: #fff;
 }
@@ -24,12 +24,13 @@
   border: 1px solid var(--product-card-border-color);
   transition: transform 0.2s;
   margin: 10px;
+  box-shadow: 0 0 5px #ccc;
 }
 
 /* Hover effect for movie cards */
 .movie-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ffae00;
 }
 
 .movie-card img {
