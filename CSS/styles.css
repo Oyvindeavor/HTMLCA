@@ -19,11 +19,12 @@
   --font-secondary: "Lora", serif; /* Secondary font */
   /*---------------Colors-------------*/
   --main-color: #008787; /* Main background color */
-  --hdr-footer-color: white; /* Header and footer color */
-  --headline-txt-color: #ffae00; /* Headline text color (h2) */
+  --hdr-footer-color: #ffae00; /* Header and footer color */
+  --headline-txt-color: #ffae00; /* Headline text color (em emphasis) */
   --body-txt-color: black; /* Body text color (p) */
   --icons-color: black; /* All google icons color */
   --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
+  --link-color: blue;
   /*---------------Sizes--------------*/
   --border-radius: 10px; /* Border radius for images/buttons/divs */
   --breadcrumb-icon-size: 10px; /* Breadcrumb icon size */
@@ -148,7 +149,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+
   width: 100%;
 }
 
@@ -158,6 +159,7 @@ img {
   justify-content: space-evenly;
   border-radius: var(--border-radius);
   background-color: #000000;
+  border: 1px solid #ffae00;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
@@ -208,13 +210,28 @@ img {
   display: flex;
   flex-direction: column;
   width: 90px;
-  color: blue;
+  color: var(--link-color);
   font-family: var(--font-secondary);
 }
 
 /* --------------------------------------*/
 /* -------->>> =Reusables <<<------------*/
 /* --------------------------------------*/
+/* ===== BUTTONS ===== */
+.button {
+  /* Main button styling reuse this */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #0711dd;
+  color: white;
+}
 
 .flex {
   /* Reuse this for flexbox */
@@ -229,6 +246,10 @@ img {
 /* Reuse this for inline list styling */
 .no-list.inline li {
   display: inline;
+}
+
+.white-background {
+  background-color: #869898;
 }
 
 .material-symbols-outlined.size {
@@ -259,7 +280,7 @@ img {
 /* ------------------------------------*/
 /* -------->>> =Typography <<<---------*/
 /* ------------------------------------*/
-
+/* The font sizes and lenghts are in the media querys */
 h1,
 h2,
 h3,
@@ -302,13 +323,7 @@ p {
   margin: 10px;
 }
 
-.form-wrapper label {
-  display: block;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
+/* Styling for all the inputs in forms */
 .form-wrapper input {
   margin-bottom: 10px;
   width: 100%;
@@ -319,18 +334,6 @@ p {
 }
 
 /* Form button styling */
-.form-wrapper > form > button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--main-color);
-  color: #000000; /* Change text color to white */
-  font-size: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 /* -- Videos page (Merge videos.css in here when done) -- */
 
@@ -389,20 +392,6 @@ p {
   margin-bottom: 10px;
 }
 
-.cart-button {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  padding: 10px 20px;
-  margin: 4px 2px;
-  font-size: 16px;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: white;
-}
-
 .cart-content-wrapper {
   display: flex;
   width: 100%;
@@ -417,8 +406,17 @@ p {
 }
 
 .cart-confirmation {
-  border: solid black;
   width: auto;
+  height: auto;
+}
+
+.img-wrapper {
+  width: 20%;
+  border-radius: var(--border-radius);
+}
+
+.img-wrapper img {
+  border-radius: var(--border-radius);
 }
 
 /* --------------------------------------*/
@@ -573,3 +571,16 @@ p {
 
 @media screen and (min-width: 1024px) {
 }
+
+/*                               _.-="_-         _
+                         _.-="   _-          | ||"""""""---._______     __..
+             ___.===""""-.______-,,,,,,,,,,,,`-''----" """""       """""  __'
+      __.--""     __        ,'                   o \           __        [__|
+ __-""=======.--""  ""--.=================================.--""  ""--.=======:
+]       [Ø] : /        \ : |========================|    : /        \ :  [Ø] :
+V___________:|          |: |========================|    :|          |:   _-"
+ V__________: \        / :_|=======================/_____: \        / :__-"
+ -----------'  "-____-"  `-------------------------------'  "-____-"
+
+- Øyvind
+ */

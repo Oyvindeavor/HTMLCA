@@ -18,7 +18,7 @@
     <!---Google icons-->
   </head>
 
-  <body>
+  <body class="white-background">
     <header>
       <div class="header-container">
         <div class="logo">
@@ -78,15 +78,32 @@
 
       <div class="cart-content-wrapper">
         <div class="form-container cart-confirmation">
-          <div class="form-wrapper"></div>
+          <!--There is no form here but i reuse the container for the form as it serves the same purpose-->
           <div class="confirmation-wrapper">
-            <h1>Thank you for your purchase!</h1>
+            <div class="flex confirmation-icons">
+              <span class="material-symbols-outlined size">check_circle</span>
+
+              <h1>Thank you for your purchase!</h1>
+            </div>
             <p>Your order has been confirmed</p>
+            <p>Confirmation #DQ32135E0</p>
             <p>
               You will receive an email confirmation shortly with your order
-              details.
+              details. You can also access your digital copy from the link
+              below.
             </p>
-            <p>If you have any questions, please feel free to contact us at</p>
+
+            <div class="flex img-wrapper">
+              <img src="media/assets/epic.jpg" />
+              <div class="flex cart-item-name">
+                <h2>Epic</h2>
+                <p>Digital</p>
+              </div>
+            </div>
+            <a class="button" href="index.html">
+              Epic - Digital Copy
+              <span class="material-symbols-outlined">download</span>
+            </a>
           </div>
         </div>
       </div>
