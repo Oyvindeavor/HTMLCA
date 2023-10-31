@@ -41,7 +41,7 @@
             </li>
 
             <li>
-              <a class="nav-buttons active" href="contact.html">Contact</a>
+              <a class="nav-buttons" href="contact.html">Contact</a>
             </li>
           </ul>
         </nav>
@@ -64,22 +64,65 @@
 
     <main>
       <div class="main-content">
-        <div class="contact-container">
-          <div class="form-container">
-            <h1>Contact Us</h1>
-            <div class="form-wrapper">
-              <form action="mockhtml-pages/contactmock.html">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
+        <ol class="breadcrumb-cart no-list inline margin-column-row">
+          <li class="breadcrumb-item">
+            <a href="index.html">Cart</a>
+            <span class="material-symbols-outlined">navigate_next</span>
+          </li>
+          <li class="breadcrumb-item"><a href="videos.html">Information</a></li>
+          <li class="breadcrumb-item"><a href="about.html">Payment</a></li>
+        </ol>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
+        <div class="flex wrapper-cart-section1 margin-column-row">
+          <img src="media/assets/epic.jpg" />
+          <div class="flex cart-item-name">
+            <h2>Epic</h2>
+            <p>Digital</p>
+          </div>
+          <div class="flex price-cart">
+            <a href="emptycart.html">
+              <span class="material-symbols-outlined">delete</span>
+            </a>
 
-                <label for="message">Message</label>
-                <input type="text" id="message" name="message" required />
+            <h2>$9.99</h2>
+          </div>
+        </div>
+        <hr />
 
-                <button id="submit" type="submit" value="Submit">Submit</button>
-              </form>
+        <div class="wrapper-cart-section2">
+          <div class="flex cart-spacebetween">
+            <h2>Subtotal</h2>
+
+            <h2>$7.00</h2>
+          </div>
+        </div>
+        <hr />
+
+        <div class="wrapper-cart-section3">
+          <div class="flex cart-spacebetween">
+            <h2>Taxes</h2>
+
+            <h2>$2.99</h2>
+          </div>
+        </div>
+        <hr />
+
+        <div class="wrapper-cart-section4">
+          <div class="flex cart-spacebetween">
+            <h2>Total</h2>
+            <div class="cart-price-usd">
+              <h2>$9.99</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrapper-cart-section5">
+          <div class="flex cart-spacebetween">
+            <a class="cart-button" href="videos.html">Continue Shopping</a>
+            <div class="cart-payment">
+              <a class="cart-button" href="cart-information.html">
+                Continue to information
+              </a>
             </div>
           </div>
         </div>

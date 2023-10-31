@@ -1,0 +1,12 @@
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 250px 100px;
+  height: 300px;
+}
+
+.cart-content {
+  background-color: aliceblue;
+  height: 100vh;
+}

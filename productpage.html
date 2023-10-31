@@ -7,7 +7,7 @@
     <meta property="og:title" content="" />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/png" href="media/favicon.png" />
-    <title>About</title>
+    <title>Productpage</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css" />
     <link rel="stylesheet" type="text/css" href="CSS/productpage.css" />
     <link
@@ -24,10 +24,10 @@
           <a href="index.html"><img src="media/logo.png" /></a>
         </div>
 
-        <nav class="list-remove decoration">
+        <nav class="inline">
           <!---Removes list,text decoration, adds display inline-->
 
-          <ul>
+          <ul class="no-list inline">
             <li>
               <a class="nav-buttons" href="index.html">Home</a>
             </li>
@@ -41,49 +41,74 @@
         </nav>
 
         <div class="container-cart-login">
-          <div class="icons-header">
-            <!--Shopping cart google icons-->
-            <a href="#">
-              <span class="material-symbols-outlined size">
-                account_box
-              </span></a
-            >
-            <label>Log in</label>
-          </div>
-
-          <div class="icons-header">
-            <!--Shopping cart google icons-->
-            <a href="#">
-              <span class="material-symbols-outlined size">
-                shopping_cart
-              </span></a
-            >
-            <label>Cart</label>
+          <div class="container-cart-login">
+            <div class="icons-header">
+              <!--Shopping cart google icons-->
+              <a href="emptycart.html">
+                <span class="material-symbols-outlined size">
+                  shopping_cart
+                </span>
+              </a>
+              <label>Cart</label>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="main-content"></div>
+      <div class="main-content">
+        <h1>HELLO</h1>
+        <div class="backdrop">
+          <img
+            src="media/assets/epic.jpg"
+            alt="Poster for Epic: Characters from the movie posing in a field "
+          />
+          <div class="overview">
+            <h2>Epic (2013)</h2>
+            <p>07/06/2013</p>
+            <h3>Horror,Thriller</h3>
+            <span class="star-rating material-symbols-outlined">
+              star star star star star
+            </span>
+            <h3>Overview</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+              tenetur atque nulla quam et nemo blanditiis deleniti numquam
+              praesentium libero nostrum harum porro fuga recusandae in, qui
+              magni distinctio. Ullam.
+            </p>
+          </div>
+        </div>
+        <div class="trailer">
+          <iframe
+            src="https://www.youtube.com/embed/BJVkoq_wK80?si=W1W8Nf2T2DOaerfP"
+            title="YouTube video player"
+          ></iframe>
+        </div>
+      </div>
     </main>
 
     <footer>
       <div class="footer-container">
         <a href="index.html"><img src="media/logo.png" /></a>
 
-        <div class="social-media">Social media</div>
-        <div class="footer-items list-remove decoration">
-          Quick Links
-          <ul>
+        <div class="footer-items">
+          <label>Quick links</label>
+          <ul class="no-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="videos.html">Videos</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <p>Test</p>
-        <p>test</p>
+        <div class="socials"><img src="#" /></div>
+        <label>
+          Movie images by
+          <br />
+          <a href="https://www.themoviedb.org/">TMDB</a>
+        </label>
+        &copy; 2023 Square Eyes. All rights reserved.
       </div>
     </footer>
   </body>

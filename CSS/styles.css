@@ -1,266 +1,338 @@
-/* -- import fonts -- */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;500;700&display=swap");
 
-/* -- Global -- */
+/*-----------------------------------*/
+/*-------->>> =Resets <<<------------*/
+/*-----------------------------------*/
 * {
   -moz-box-sizing: border-box; /* Firefox */
   box-sizing: border-box;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
-/* -- Variables -- */
+/*-----------------------------------*/
+/*-------->>> =Variables <<<---------*/
+/*-----------------------------------*/
 :root {
-    --main-color: darkslategrey; /* Main background color */
-    --hdr-footer-color: #162638; /* Header and footer color */
-    --font-primary: 'Poppins', sans-serif; /* Main Font */
-    --font-secondary: 'Lora', serif; /* Secondary font */
-    --headline-txt-color: #FFAE00; /* Headline text color (h2) */
-    --body-txt-color: black; /* Body text color (p) */
-    --icons-color: black; /* All google icons color */
-    --horizontal-line-color: #FFAE00; /* Horizontal line (hr tag) color */
-    /* -- Videos page -- */
+  /* Fonts */
+  --font-primary: "Poppins", sans-serif; /* Main Font */
+  --font-secondary: "Lora", serif; /* Secondary font */
+  /*---------------Colors-------------*/
+  --main-color: #008787; /* Main background color */
+  --hdr-footer-color: white; /* Header and footer color */
+  --headline-txt-color: #ffae00; /* Headline text color (h2) */
+  --body-txt-color: black; /* Body text color (p) */
+  --icons-color: black; /* All google icons color */
+  --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
+  /*---------------Sizes--------------*/
+  --border-radius: 10px; /* Border radius for images/buttons/divs */
+  --breadcrumb-icon-size: 10px; /* Breadcrumb icon size */
 }
 
-html {
-    overflow-x: hidden; /* Fix for scrollbar jumping */
-    margin-right: calc(-1 * (100vw - 100%)); /* Fix for scrollbar jumping */
+/* ------------------------------------------ */
+/* -------->>> =Global/Layout <<<------------ */
+/* ------------------------------------------ */
+
+header {
+  grid-area: header;
+  background-color: var(--hdr-footer-color);
 }
 
-/* -- Grid layout -- */
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--hdr-footer-color);
+}
+
 body {
-  min-height: 100vh; 
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: var(--main-color);
   display: grid;
-  grid-template-columns: 100px auto 100px; /* 100px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
-  grid-template-rows: 100px auto 120px; /* This sets the header 100px the main content to auto to stretch and the footer to 100px */
+  grid-template-columns: 150px auto 150px; /* 250px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
+  grid-template-rows: 100px auto 150px; /* This sets the header 100px the main content to auto to stretch and the footer to 150px */
   grid-template-areas:
     "header header header"
     "....   main   ...."
     "footer footer footer";
 }
 
-header { 
-    grid-area: header;
-    background-color:
-    var(--hdr-footer-color);
- }
-main { 
-    grid-area: main;
- }
-footer { 
-    grid-area: footer;
-    background-color: var(--hdr-footer-color) 
+html {
+  overflow-x: hidden; /* Fix for scrollbar jumping dont remove, no clue why it works but... it works*/
+  margin-right: calc(
+    -1 * (100vw - 100%)
+  ); /* Fix for scrollbar jumping, no clue why it works but... it works*/
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none; /* Removes the underline on all links */
+}
+
+p {
+  max-width: 40em; /* This is to control the line length on all text with the p tag */
 }
 
 img {
-    max-width: 100%; /* Sets all the images to max width 100% to make them fluid */
-    height: auto;
+  max-width: 100%; /* Sets all the images to max width 100% to make them fluid */
+  height: auto;
 }
 
-/* -- Tools- classes reusables  */
-.margin-column-row { /* margin for columns below each column row*/
-    margin: 20px 0; 
+/* ------------------------------------------------*/
+/* -------->>> =Header/=Navigation <<<------------*/
+/* ------------------------------------------------*/
+
+.header-container,
+.icons-header {
+  display: flex;
+  align-items: center;
 }
 
-.list-remove > ul > li, /* Removes list decoration, list style, text decoration */
-.list-remove.decoration > ul > li > a { /* (.list-remove decoration) Removes list decoration, list styles, text decoration and displays the list inline */
-    list-style-type: none;
-    text-decoration: none;
-    display: inline; 
-}
-
-
-.horizontal-line {
-    border: none;
-    height: 5px;
-    background: var(--horizontal-line-color);
-    margin: 20px 0; 
-}
-
-/* -- Icons -- */
-.material-symbols-outlined.size { /* (.material-symbols-outlined size) Google icon size and styling reuse this use the same size icon for all icons */
-    display: block; /* So my label text under it gets displayed on a new line */
-    font-size: 40px;
-    color: var(--icons-color)
-}
-
-.material-symbols-outlined:hover { /* All google icons fills when hovering */
-    font-variation-settings:
-    'FILL' 1
-  }
-
-/* -- Typography (following materiel design guidelines) -- */
-h1 {
-    font-family: var(--font-primary);
-    font-weight: 700;
-    font-size: 57px;
-    line-height: 64px;
-    letter-spacing: -0.25px;
-}
-
-h2 {
-    font-family: var(--font-primary);
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: .0;
-}
-
-h3,h4 {
-    font-family: var(--font-primary);
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: .0;
-}
-
-p { 
-    font-family: var(--font-secondary);
-    max-width: 40em; /* This is to control the line length on all text with the p tag */
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-}
-
-label{
-    font-family: var(--font-primary);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0.1px;
-
-}
-
-
-/* -- Styling for the wrapper for the header-- */
 .header-container {
-    display: flex;
-    align-items: center; 
-    justify-content:space-between;
-    margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
-    height: 100%; 
+  justify-content: space-between;
+  margin: 0 250px; /* This makes the margin top 0 and 100px on each side */
+  height: 100%;
 }
 
-.container-cart-login{ /* Container for the cart and login icons */
-    display: flex;
-    
+.icons-header {
+  /*  the a tag for text decoration:none */
+  flex-direction: column;
+  padding: 5px; /* Padding between icons */
 }
 
-.icons-header, .icons-header a{ /*  the a tag for text decoration:none */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    padding: 5px; /* Padding between icons */
-}
-
-
-/* -- Navigation -- */
 .nav-buttons {
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    transition: transform 0.2s ease-in-out;
-    padding: 10px 20px; /* Padding vertical 10px, horizontal 20px */
-    font-family: var(--font-primary);
-    font-weight: 700;
-    color: #333333;
-    font-size: 16px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  padding: 10px 20px; /* Padding vertical 10px, horizontal 20px */
+  color: black; /* Black text color */
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease-in-out;
+}
 
+.nav-buttons:hover,
+.nav-buttons.active {
+  background-color: var(
+    --main-color
+  ); /* Change the background color on hover and active */
+  color: white; /* Change the text color on hover and active */
 }
 
 .nav-buttons:hover {
-  background-color: #009d9d;
-  color: white;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.nav-buttons.active { /* This adds color for buttons when "active" */
-    background-color: #008787;
-    color: white;
-  }
+/* -----------------------------------------*/
+/* -------->>> =Main content <<<------------*/
+/* -----------------------------------------*/
 
+/* --- =Hero Section --- */
 .hero-section {
-   border: solid black;
-   width: 100%;
-   height: 500px;
+  min-height: 400px;
+  min-width: auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../media/assets/othercontent/movie-background-collage 1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  /* Places the hero text in the middle ontop of the background image */
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
 }
 
 /* -- Styling for the new releases section -- */
-.new-releases { /* Container for the new releases section */
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-  }
-  
-  .new-releases-card {
-    transition: transform 0.2s;
-    max-width: 9%;
-    
-  }
-  
-  .new-releases-card:hover {
-    transform: scale(1.1);
-  }
-  
-  .new-releases-card > img {
-    border-radius: 20px;
-    transition: transform 0.2s; /* Add transition for the image */
-  }
-  
-  .new-releases-card:hover img {
-    transform: scale(1.1); /* Scale up the image on hover */
-    border-radius: 20px;
-  }
-  
+.new-releases {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: var(--border-radius);
+  background-color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
 
-/* -- Footer -- */
+.new-releases-card {
+  transition: transform 0.2s;
+  max-width: 9%;
+}
+
+.new-releases-card:hover {
+  transform: scale(1.1);
+}
+
+.new-releases-card > img {
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.new-releases-card:hover img {
+  transform: scale(1.1);
+  border-radius: var(--border-radius);
+}
+
+.section-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.text-section,
+.img-section {
+  width: 50%;
+}
+
+/* -----------------------------------*/
+/* -------->>> =Footer <<<------------*/
+/* -----------------------------------*/
+/* All footer styling here */
 .footer-container {
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 100px; /* This makes the margin top 0 and 100px on each side */
-    height: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 250px; /* This makes the margin top 0 and 100px on each side */
+  height: 100%;
 }
 
-.footer-items{ /* Container for items in the footer reuse this */
-    display: flex;
-    flex-direction: column;
-    border: solid black;
-    height: 100%;
-
+.footer-items a {
+  /* Container for items in the footer quick links, copyright etc. reuse this */
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+  color: blue;
+  font-family: var(--font-secondary);
 }
 
-.section-wrapper{
-    width: 100%;
-    border: solid black;
-    display: flex;
+/* --------------------------------------*/
+/* -------->>> =Reusables <<<------------*/
+/* --------------------------------------*/
+
+.flex {
+  /* Reuse this for flexbox */
+  display: flex;
 }
 
-.text-section{
-    border: solid black;
-    width: 50%;
+/* Reuse this for removing list styling */
+.no-list li {
+  list-style-type: none;
 }
 
-.img-section{
-    border: solid black;
-    width: 50%;
-    
+/* Reuse this for inline list styling */
+.no-list.inline li {
+  display: inline;
 }
 
+.material-symbols-outlined.size {
+  /* (.material-symbols-outlined size) Google icon size and styling reuse this use the same size icon for all main icons */
+  display: block; /* THis is so my label text under it gets displayed on a new line */
+  font-size: 40px;
+  color: var(--icons-color);
+}
 
+.material-symbols-outlined:hover {
+  /* This is so the google icons fills when you hover over them */
+  font-variation-settings: "FILL" 1;
+}
 
+/*This is margin 10px top and bottom reuse this */
+.margin-column-row {
+  margin: 20px 0;
+}
 
+.horizontal-line {
+  /* This is styling for the HR tag between sections on the main page*/
+  border: none;
+  height: 5px;
+  background: var(--horizontal-line-color);
+  margin: 20px 0;
+}
 
+/* ------------------------------------*/
+/* -------->>> =Typography <<<---------*/
+/* ------------------------------------*/
 
+h1,
+h2,
+h3,
+h4,
+label {
+  color: var(--body-txt-color);
+  font-family: var(--font-primary);
+}
 
+em {
+  color: var(--headline-txt-color);
+}
+
+p {
+  color: var(--body-txt-color);
+  font-family: var(--font-secondary);
+}
+
+/* ------------------------------------*/
+/* -------->>> =Forms <<<--------------*/
+/* ------------------------------------*/
+/* Styling for all forms */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 2%;
+  width: 40%;
+  height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
+  border: 1px solid #fff;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.form-wrapper {
+  justify-content: center;
+  margin: 10px;
+}
+
+.form-wrapper label {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-wrapper input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px #ccc;
+}
+
+/* Form button styling */
+.form-wrapper > form > button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--main-color);
+  color: #000000; /* Change text color to white */
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /* -- Videos page (Merge videos.css in here when done) -- */
-
-
 
 /* -- About page css (Merge about.css in here when done) -- */
 
@@ -268,18 +340,245 @@ label{
 
 /* -- Product page css (merge product-page.css in here when done) -- */
 
+/* ------------------------------------*/
+/* -------->>> =Cart <<<---------------*/
+/* ------------------------------------*/
 
-/* -- Page specific layouts -- */ 
-/* -- create classes here for different page layouts. -- */
-.aboutme-grid{
-    grid-template-areas: 
-    "header"
-    "main"
-    "footer";
+.breadcrumb-cart {
+  /* This is breadcrumbs specific to the cart */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: solid black;
 }
 
+.breadcrumb-cart span {
+  /* Styling for the breadcrumb icons (arrow) */
+  font-size: var(--breadcrumb-icon-size);
+  font-weight: 700;
+}
 
-/* -- Typography smaller screens -- */
+.wrapper-cart-section1 {
+  /* Wrapper for the cart */
+  width: 100%;
+  height: 300px;
+}
 
+.wrapper-cart-section1 img {
+  /* Movie product for the cart */
+  width: auto;
+  border-radius: var(--border-radius);
+}
 
-/*Media Querys
+.cart-item-name {
+  /* Styling for the movie name */
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+.price-cart {
+  width: 100%;
+  justify-content: right;
+  align-items: center;
+}
+
+.cart-spacebetween {
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+}
+
+.cart-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.breadcrumb-cart {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: solid black;
+}
+
+.breadcrumb-cart span {
+  font-size: var(--breadcrumb-icon-size);
+  font-weight: 700;
+}
+
+.credit-card {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* --------------------------------------*/
+/* -------->>> =Media Querys <<<---------*/
+/* --------------------------------------*/
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  main {
+    /* Small amount of padding so the text doesnt touch the edge of the screen */
+    padding: 0 0.5px;
+  }
+
+  h1 {
+    /* Headline text */
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  label {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100px auto 100px; /* This sets the header 100px, the main content to auto to stretch, and the footer to 150px */
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  .form-container {
+    width: 70%; /* Adjust the width to 70% of the viewport width */
+    height: auto; /* Remove the fixed height */
+    padding: 5%; /* Adjust the padding */
+  }
+
+  h1 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+
+  label {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    min-height: 100vh;
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: 150px auto 150px; /* 250px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
+    grid-template-rows: 100px auto 150px; /* This sets the header 100px the main content to auto to stretch and the footer to 150px */
+    grid-template-areas:
+      "header header header"
+      "....   main   ...."
+      "footer footer footer";
+  }
+
+  h1 {
+    font-size: 57px;
+    line-height: 64px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h3,
+  h4 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  p {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.5px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+  /* Your CSS rules for high-resolution displays go here */
+}
+
+@media screen and (min-width: 1024px) {
+  /* Your custom CSS rules for a specific screen width */
+}

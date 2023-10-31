@@ -1,60 +1,76 @@
-:root{
-    --body-text-color: #000000;
-    --product-card-background-color: #018c8c26;
-    --button-background-color: #018c8c;
-    --button-text-color: #fff;
+:root {
+  --body-text-color: #333;
+  --product-card-background-color: #ffffff;
+  --button-background-color: #018c8c;
+  --button-text-color: #fff;
 }
 
+/* Container for movie cards - Display 4 cards in each row */
+.movie-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  gap: 0px; /* Adds a 20px gap between grid items */
+  justify-content: center;
+}
 
-.movie-cards-flexbox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-  }
-  
-  .movie-card {
-    width: 250px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    text-align: center;
-    background-color: var(--product-card-background-color);
-    margin: 10px; 
-    border-radius: 10px; 
-  }
-  
-  .movie-card img {
-    border-radius: 10px;
-    transition: transform 0.2s;
-    max-width: 100%; 
-  }
-  
-  .movie-card img:hover {
-    transform: scale(1.1);
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-  }
-  
-  p {
-    font-size: 1rem;
-    color: var(--body-text-color)
-  }
-  
-  button {
-    background-color: var(--button-background-color);
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #016767;
-  }
+/* Styles for movie cards */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--product-card-background-color);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid var(--product-card-border-color);
+  transition: transform 0.2s;
+  margin: 10px;
+}
+
+/* Hover effect for movie cards */
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 5px #ccc;
+}
+
+.movie-card img {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced box shadow */
+  height: 300px;
+}
+
+.movie-card label {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--body-text-color);
+  padding: 0 10px;
+}
+
+/* Typography styles */
+h2 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+/* Button styles */
+.button-style {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.button-style:hover {
+  background-color: #016767;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  margin: 10px;
+}
