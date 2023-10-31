@@ -411,21 +411,14 @@ p {
   align-items: center;
 }
 
-.breadcrumb-cart {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border: solid black;
-}
-
-.breadcrumb-cart span {
-  font-size: var(--breadcrumb-icon-size);
-  font-weight: 700;
-}
-
 .credit-card {
   flex-direction: row;
   justify-content: space-between;
+}
+
+.cart-confirmation {
+  border: solid black;
+  width: auto;
 }
 
 /* --------------------------------------*/
@@ -494,9 +487,9 @@ p {
   }
 
   .form-container {
-    width: 70%; /* Adjust the width to 70% of the viewport width */
-    height: auto; /* Remove the fixed height */
-    padding: 5%; /* Adjust the padding */
+    width: 70%;
+    height: auto;
+    padding: 5%;
   }
 
   h1 {
@@ -576,9 +569,7 @@ p {
 
 @media screen and (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi) {
-  /* Your CSS rules for high-resolution displays go here */
 }
 
 @media screen and (min-width: 1024px) {
-  /* Your custom CSS rules for a specific screen width */
 }
