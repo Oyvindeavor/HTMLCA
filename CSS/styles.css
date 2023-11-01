@@ -13,19 +13,19 @@
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 /*-------->>> =Variables <<<----------*/
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
 :root {
-  /* -------->>> =Fonts <<<-------------*/
   --font-primary: "Poppins", sans-serif; /* Main Font */
   --font-secondary: "Lora", serif; /* Secondary font */
-  /* -------->>> =Colors <<<-------------*/
   --main-color: #008787; /* Main background color */
-  --hdr-footer-color: #ffae00; /* Header and footer color */
+  --hdr-footer-color: #ccc; /* Header and footer color */
   --emphasis-text-color: #ffae00; /* Headline text color (em emphasis) */
   --body-txt-color: black; /* Body text color (p) */
   --icons-color: black; /* All google icons color */
   --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
+  --star-rating-color: yellow; /* Star rating color */
   --link-color: blue;
-  /* -------->>> =Sizes<<<-------------*/
+  --btn-text-color-card: #fff; /* Button text color on moviecards */
   --border-radius: 10px; /* Border radius for images/buttons/divs */
   --breadcrumb-icon-size: 10px; /* Breadcrumb icon size */
 }
@@ -33,6 +33,7 @@
 /* -------------------------------------------- */
 /* -------->>> =Global & Layout <<<------------ */
 /* -------------------------------------------- */
+
 header {
   grid-area: header;
   background-color: var(--hdr-footer-color);
@@ -102,14 +103,15 @@ img {
   transition: transform 0.2s ease-in-out;
 }
 
+/* Change the background color on hover and active */
 .nav-buttons:hover,
 .nav-buttons.active {
-  background-color: var(--main-color); /* Change the background color on hover and active */
+  background-color: var(--main-color);
   color: white; /* Change the text color on hover and active */
 }
 
 .nav-buttons:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
 /* -----------------------------------------*/
@@ -117,6 +119,7 @@ img {
 /* -----------------------------------------*/
 
 /* -------->>> =Hero section <<<-------------*/
+
 .hero-section {
   min-height: 400px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../media/assets/othercontent/movie-background-collage 1.png"); /* Background img with overlay */
@@ -127,68 +130,59 @@ img {
 }
 
 /* -------->>> =New releases section <<<-------------*/
-
+/* Container for the new releases section */
 .new-releases {
-  display: flex;
-  justify-content: space-evenly;
   border-radius: var(--border-radius);
   background-color: #000000;
   border: 1px solid #ffae00;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: auto;
+  height: auto;
   padding: 20px;
 }
 
-.new-releases-card {
-  transition: transform 0.2s;
-  max-width: 9%;
-}
-
-.new-releases-card:hover {
-  transform: scale(1.1);
-}
-
-.new-releases-card > img {
+/* Container that wraps the whole image */
+.img-card {
   border-radius: var(--border-radius);
-  transition: transform 0.2s;
+  height: auto;
+  width: 80%; /* Use this to control the container */
 }
-
-#amundsen-img:hover {
-  filter: drop-shadow(1rem 1rem 3rem #6c9eb6);
-}
-
-#godzilla-img:hover {
-  filter: drop-shadow(1rem 1rem 3rem #084f68);
-}
-
-#hercules-img:hover {
-  filter: drop-shadow(1rem 1rem 3rem #d4762d);
-}
-
-#scream-img:hover {
-  filter: drop-shadow(1rem 1rem 3rem #335e65);
-}
-
-#her-img:hover {
-  filter: drop-shadow(1rem 1rem 3rem #c3013b);
-}
-
-#lamborghini-img:hover {
-  filter: drop-shadow(1rem 1rem 3rem #fbc90f);
-}
-
-.new-releases-card:hover img {
+/* On hover scales the image up and add a border radius adds drop shadow */
+.img-card:hover {
+  transition: transform 0.2s ease-in-out;
   transform: scale(1.1);
+  filter: drop-shadow(1rem 1rem 3rem rgba(0, 0, 0, 0.5));
+}
+
+/* -----------------------------------------*/
+/* -------->>> =Product Page <<<------------*/
+/* -----------------------------------------*/
+/* container for the banner/backdrop */
+.img-product-page {
+  width: 20%;
   border-radius: var(--border-radius);
+  border-color: black;
+  box-shadow: 3px 3px 3px 3px black;
 }
 
-.section-wrapper {
-  width: 100%;
-  display: flex;
+/* container for the movie title, rating, and overview */
+.overview {
+  margin: 30px;
 }
 
-.text-section,
-.img-section {
+iframe {
+  /* Youtube video */
+  border: none; /* Removes border, all youtube links have a border that looks ugly */
+  margin: 40px;
+  height: 400px;
   width: 50%;
+  border-radius: var(--border-radius);
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.star-rating {
+  color: var(--star-rating-color);
+  font-variation-settings: "FILL" 1; /* This fills the stars with color */
 }
 
 /* -----------------------------------*/
@@ -215,7 +209,7 @@ img {
 /* --------------------------------------*/
 /* -------->>> =Reusables <<<------------*/
 /* --------------------------------------*/
-/* ===== BUTTONS ===== */
+
 .button {
   /* Main button styling reuse this */
   text-decoration: none;
@@ -239,7 +233,7 @@ img {
   flex-direction: column;
 }
 
-/* If i just need to align items center */
+/* If i just need to align items center (need flex or grid for it to work) */
 .align-items-center {
   align-items: center;
 }
@@ -280,9 +274,13 @@ img {
   font-variation-settings: "FILL" 1;
 }
 
-/*This is margin 10px top and bottom reuse this */
+/*This is margin 10px top and bottom reuse this where needed*/
 .margin-column-row {
   margin: 20px 0;
+}
+
+.margin-top {
+  margin-top: 50px;
 }
 
 .horizontal-line {
@@ -307,7 +305,7 @@ label {
 }
 
 em {
-  color: var(--emphasis-text-color); /* Emphasis text color */
+  color: var(--emphasis-text-color);
 }
 
 p {
@@ -318,8 +316,8 @@ p {
 /* ------------------------------------*/
 /* -------->>> =Forms <<<--------------*/
 /* ------------------------------------*/
-/* Styling for all forms */
 
+/* main container for the forms */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -332,6 +330,7 @@ p {
   border: 1px solid #fff;
 }
 
+/* Wrapper container for the form */
 .form-wrapper {
   justify-content: center;
   margin: 10px;

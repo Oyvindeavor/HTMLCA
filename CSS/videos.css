@@ -1,15 +1,15 @@
 :root {
   --body-text-color: #333;
-  --product-card-background-color: transparent;
+  --product-card-background-color: #019b9b;
   --button-background-color: #018c8c;
   --button-text-color: #fff;
 }
 
-/* Container for movie cards - Display 4 cards in each row */
+/* Grid container for movie cards - */
 .movie-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-  gap: 0px; /* Adds a 20px gap between grid items */
+  gap: 20px; /* Adds a 20px gap between grid items */
   justify-content: center;
 }
 
@@ -21,16 +21,16 @@
   background-color: var(--product-card-background-color);
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid var(--product-card-border-color);
+  border: 10px solid var(--product-card-border-color);
   transition: transform 0.2s;
   margin: 10px;
-  box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 2px #ccc;
 }
 
 /* Hover effect for movie cards */
 .movie-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 5px #ffae00;
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px #ccc;
 }
 
 .movie-card img {
@@ -73,5 +73,6 @@ h2 {
 .category-buttons {
   display: flex;
   justify-content: center; /* Center align the buttons */
+  flex-wrap: wrap;
   margin: 10px;
 }
