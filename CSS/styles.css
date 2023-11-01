@@ -24,8 +24,10 @@
   --icons-color: black; /* All google icons color */
   --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
   --star-rating-color: yellow; /* Star rating color */
-  --link-color: blue;
-  --btn-text-color-card: #fff; /* Button text color on moviecards */
+  --product-card-background-color: #019b9b; /* Product card background color */
+  --button-background-color-prodpage: #018c8c; /*Button background color on product page */
+  --link-color: blue; /* Link color */
+  --btn-text-color-card: #fff; /* Button text color on moviecards (videos page) */
   --border-radius: 10px; /* Border radius for images/buttons/divs */
   --breadcrumb-icon-size: 10px; /* Breadcrumb icon size */
 }
@@ -183,6 +185,74 @@ iframe {
 .star-rating {
   color: var(--star-rating-color);
   font-variation-settings: "FILL" 1; /* This fills the stars with color */
+}
+
+/* -----------------------------------------*/
+/* -------->>> =Videos Page <<<-------------*/
+/* -----------------------------------------*/
+/* Grid container for movie cards - */
+.movie-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  gap: 20px; /* Adds a 20px gap between grid items */
+  justify-content: center;
+}
+
+/* Styles for movie cards */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--product-card-background-color);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s;
+  margin: 10px;
+  box-shadow: 0 0 2px #ccc;
+}
+
+/* Hover effect for movie cards */
+.movie-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px #ccc;
+}
+
+.movie-card img {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 300px;
+}
+
+.movie-card label {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--body-text-color);
+  padding: 0 10px;
+}
+
+/* Button styles */
+.button-style {
+  background-color: var(--button-background-color-prodpage);
+  color: var(--btn-text-color-card);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.button-style:hover {
+  background-color: #016767;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
 /* -----------------------------------*/
@@ -359,7 +429,6 @@ p {
   display: flex;
   align-items: center;
   text-align: center;
-  border: solid black;
 }
 
 .breadcrumb-cart span {
@@ -412,13 +481,9 @@ p {
   justify-content: space-between;
 }
 
-.cart-confirmation {
-  width: auto;
-  height: auto;
-}
-
 .img-wrapper {
-  width: 20%;
+  /* Wrapper for the image purchased product */
+  width: 40%;
   border-radius: var(--border-radius);
 }
 

@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Homepage" content="Square eyes" />
+    <meta property="og:title" content="" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="media/favicon.png" />
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!---Google icons-->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="Homepage" content="Square eyes" />
-  <meta property="og:title" content="" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" type="image/png" href="media/favicon.png" />
-  <title>Contact</title>
-  <link rel="stylesheet" type="text/css" href="CSS/styles.css" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <!---Google icons-->
-</head>
+  <body class="white-background">
+    <header>
+      <div class="header-container flex align-items-center">
+        <div class="logo">
+          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
+        </div>
+        <nav>
+          <ul class="no-list inline">
+            <li>
+              <a class="nav-buttons" href="index.html">Home</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="videos.html">Videos</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="about.html">About</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="flex direction-column align-items-center">
+          <a href="emptycart.html">
+            <span class="material-symbols-outlined size">shopping_cart</span>
+          </a>
+          <label>Cart</label>
+        </div>
+      </div>
+    </header>
+    <main>
+      <ol class="breadcrumb-cart no-list inline margin-column-row">
+        <li class="breadcrumb-item">
+          <a href="index.html">Cart</a>
+          <span class="material-symbols-outlined">navigate_next</span>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="videos.html">Information</a>
+          <span class="material-symbols-outlined">navigate_next</span>
+        </li>
+        <li class="breadcrumb-item"><a href="about.html">Payment</a></li>
+      </ol>
+      <div class="cart-content-wrapper">
+        <div class="form-container">
+          <!--There is no form here but i reuse the container for the form as it serves the same purpose-->
 
-<body class="white-background">
-  <header>
-    <div class="header-container flex align-items-center">
-      <div class="logo">
-        <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
-      </div>
-      <nav>
-        <ul class="no-list inline">
-          <li>
-            <a class="nav-buttons" href="index.html">Home</a>
-          </li>
-          <li>
-            <a class="nav-buttons" href="videos.html">Videos</a>
-          </li>
-          <li>
-            <a class="nav-buttons" href="about.html">About</a>
-          </li>
-          <li>
-            <a class="nav-buttons" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="flex direction-column align-items-center">
-        <a href="emptycart.html">
-          <span class="material-symbols-outlined size">shopping_cart</span>
-        </a>
-        <label>Cart</label>
-      </div>
-    </div>
-  </header>
-  <main>
-    <ol class="breadcrumb-cart no-list inline margin-column-row">
-      <li class="breadcrumb-item">
-        <a href="index.html">Cart</a>
-        <span class="material-symbols-outlined">navigate_next</span>
-      </li>
-      <li class="breadcrumb-item">
-        <a href="videos.html">Information</a>
-        <span class="material-symbols-outlined">navigate_next</span>
-      </li>
-      <li class="breadcrumb-item"><a href="about.html">Payment</a></li>
-    </ol>
-    <div class="cart-content-wrapper">
-      <div class="form-container cart-confirmation">
-        <!--There is no form here but i reuse the container for the form as it serves the same purpose-->
-        <div class="confirmation-wrapper">
           <div class="flex confirmation-icons">
             <span class="material-symbols-outlined size">check_circle</span>
             <h1>Thank you for your purchase!</h1>
           </div>
           <p>Your order has been confirmed</p>
+          <p>You will receive an email confirmation shortly with your order details. You can also access your digital copy from the link below.</p>
+          <br />
+
           <p>Confirmation #DQ32135E0</p>
-          <p> You will receive an email confirmation shortly with your order details. You can also access your digital
-            copy from the link below. </p>
+          <br />
+
           <div class="flex img-wrapper">
             <img src="media/assets/epic.jpg" />
             <div class="flex cart-item-name">
@@ -76,13 +77,12 @@
               <p>Digital</p>
             </div>
           </div>
-          <a class="button" href="https://www.youtube.com/watch?v=mh3L091Y7QQ" target="_blank"> Epic - Digital Copy
+          <a class="button" href="https://www.youtube.com/watch?v=mh3L091Y7QQ" target="_blank">
+            Epic - Digital Copy
             <span class="material-symbols-outlined">download</span>
           </a>
         </div>
       </div>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
