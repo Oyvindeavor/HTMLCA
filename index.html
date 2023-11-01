@@ -18,33 +18,31 @@
 
   <body>
     <header>
-      <div class="header-container">
+      <div class="header-container flex align-items-center">
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" /></a>
+          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
         </div>
-
         <nav>
           <ul class="no-list inline">
-            <!---Removes list, adds display inline-->
             <li>
               <a class="nav-buttons" href="index.html">Home</a>
             </li>
-
-            <li><a class="nav-buttons" href="videos.html">Videos</a></li>
-
-            <li><a class="nav-buttons" href="about.html">About</a></li>
-
-            <li><a class="nav-buttons" href="contact.html">Contact</a></li>
+            <li>
+              <a class="nav-buttons" href="videos.html">Videos</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="about.html">About</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="contact.html">Contact</a>
+            </li>
           </ul>
         </nav>
-
-        <div class="container-cart-login">
-          <div class="icons-header">
-            <a href="emptycart.html">
-              <span class="material-symbols-outlined size">shopping_cart</span>
-            </a>
-            <label>Cart</label>
-          </div>
+        <div class="icons-header flex direction-column align-items-center">
+          <a href="emptycart.html">
+            <span class="material-symbols-outlined size">shopping_cart</span>
+          </a>
+          <label>Cart</label>
         </div>
       </div>
     </header>
@@ -61,7 +59,7 @@
             <h2>Support independent movie makers</h2>
           </div>
         </div>
-        <section class="section1">
+        <section id="section1">
           <h2>New Releases</h2>
           <div class="new-releases margin-column-row">
             <a

@@ -20,45 +20,31 @@
 
   <body class="white-background">
     <header>
-      <div class="header-container">
+      <div class="header-container flex align-items-center">
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" /></a>
+          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
         </div>
-
-        <nav class="inline">
-          <!---Removes list,text decoration, adds display inline-->
-
+        <nav>
           <ul class="no-list inline">
             <li>
               <a class="nav-buttons" href="index.html">Home</a>
             </li>
-
             <li>
               <a class="nav-buttons" href="videos.html">Videos</a>
             </li>
-
             <li>
               <a class="nav-buttons" href="about.html">About</a>
             </li>
-
             <li>
               <a class="nav-buttons" href="contact.html">Contact</a>
             </li>
           </ul>
         </nav>
-
-        <div class="container-cart-login">
-          <div class="container-cart-login">
-            <div class="icons-header">
-              <!--Shopping cart google icons-->
-              <a href="emptycart.html">
-                <span class="material-symbols-outlined size">
-                  shopping_cart
-                </span>
-              </a>
-              <label>Cart</label>
-            </div>
-          </div>
+        <div class="icons-header flex direction-column align-items-center">
+          <a href="emptycart.html">
+            <span class="material-symbols-outlined size">shopping_cart</span>
+          </a>
+          <label>Cart</label>
         </div>
       </div>
     </header>

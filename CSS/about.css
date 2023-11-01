@@ -1,9 +1,0 @@
-.about-us {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.about-us h1 {
-  text-align: center;
-  padding: 10px;
-}

@@ -20,53 +20,34 @@
 
   <body class="white-background">
     <header>
-      <div class="header-container">
+      <div class="header-container flex align-items-center">
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" /></a>
-          <!--The logo is clickable and takes you back to the homepage-->
+          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
         </div>
-
-        <nav class="inline">
-          <!--Displays inline-->
+        <nav>
           <ul class="no-list inline">
-            <!--Removes list, text decoration displays inline-->
             <li>
               <a class="nav-buttons" href="index.html">Home</a>
-              <!--Nav buttons-->
             </li>
-
             <li>
               <a class="nav-buttons" href="videos.html">Videos</a>
             </li>
-
             <li>
               <a class="nav-buttons" href="about.html">About</a>
             </li>
-
             <li>
               <a class="nav-buttons" href="contact.html">Contact</a>
             </li>
           </ul>
         </nav>
-
-        <div class="container-cart-login">
-          <!--Container for the cart and login icons !!!! RENAME THIS I REMOVED LOGIN-->
-          <div class="container-cart-login">
-            <!--!!!!RENAME THIS I REMOVED LOGIN-->
-            <div class="icons-header">
-              <!--Shopping cart google icons-->
-              <a href="emptycart.html">
-                <span class="material-symbols-outlined size">
-                  shopping_cart
-                </span>
-              </a>
-              <label>Cart</label>
-            </div>
-          </div>
+        <div class="icons-header flex direction-column align-items-center">
+          <a href="emptycart.html">
+            <span class="material-symbols-outlined size">shopping_cart</span>
+          </a>
+          <label>Cart</label>
         </div>
       </div>
     </header>
-
     <main>
       <!--Makes the main White background fast and easy-->
       <ol class="breadcrumb-cart no-list inline margin-column-row">

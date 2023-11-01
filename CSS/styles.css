@@ -92,17 +92,6 @@ img {
   height: 100%;
 }
 
-.header-container,
-.icons-header {
-  display: flex;
-  align-items: center;
-}
-
-.icons-header {
-  flex-direction: column;
-  padding: 5px; /* Padding between icons */
-}
-
 .nav-buttons {
   font-family: var(--font-primary);
   font-weight: 700;
@@ -153,7 +142,6 @@ img {
 
 /* -------->>> =New releases section <<<-------------*/
 
-/* -- Styling for the new releases section this section is right under the Hero section-- */
 .new-releases {
   display: flex;
   justify-content: space-evenly;
@@ -238,6 +226,13 @@ img {
   display: flex;
 }
 
+.direction-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
 /* Reuse this for removing list styling */
 .no-list li {
   list-style-type: none;
