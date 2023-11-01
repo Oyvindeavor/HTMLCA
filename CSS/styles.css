@@ -20,7 +20,7 @@
   /* -------->>> =Colors <<<-------------*/
   --main-color: #008787; /* Main background color */
   --hdr-footer-color: #ffae00; /* Header and footer color */
-  --headline-txt-color: #ffae00; /* Headline text color (em emphasis) */
+  --emphasis-text-color: #ffae00; /* Headline text color (em emphasis) */
   --body-txt-color: black; /* Body text color (p) */
   --icons-color: black; /* All google icons color */
   --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
@@ -185,7 +185,7 @@ img {
 }
 
 .footer-items a {
-  /* Container for items in the footer quick links, copyright etc. reuse this */
+  /* Container for items in the footer quick links, copyright etc.  */
   display: flex;
   flex-direction: column;
   width: 90px;
@@ -230,6 +230,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 /* Reuse this for removing list styling */
@@ -286,7 +287,7 @@ label {
 }
 
 em {
-  color: var(--headline-txt-color);
+  color: var(--emphasis-text-color); /* Emphasis text color */
 }
 
 p {
@@ -325,7 +326,11 @@ p {
   border: none;
   box-shadow: 0 0 5px #ccc;
 }
-
+/* To make message box bigger on the contact page */
+#message {
+  width: 100%;
+  height: 150px;
+}
 /* ------------------------------------*/
 /* -------->>> =Cart <<<---------------*/
 /* ------------------------------------*/
