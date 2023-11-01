@@ -126,11 +126,6 @@ img {
   position: relative;
 }
 
-.hero-text {
-  /* Places the hero text in the middle ontop of the background image */
-  text-align: center;
-}
-
 /* -------->>> =New releases section <<<-------------*/
 
 .new-releases {
@@ -155,6 +150,30 @@ img {
 .new-releases-card > img {
   border-radius: var(--border-radius);
   transition: transform 0.2s;
+}
+
+#amundsen-img:hover {
+  filter: drop-shadow(1rem 1rem 3rem #6c9eb6);
+}
+
+#godzilla-img:hover {
+  filter: drop-shadow(1rem 1rem 3rem #084f68);
+}
+
+#hercules-img:hover {
+  filter: drop-shadow(1rem 1rem 3rem #d4762d);
+}
+
+#scream-img:hover {
+  filter: drop-shadow(1rem 1rem 3rem #335e65);
+}
+
+#her-img:hover {
+  filter: drop-shadow(1rem 1rem 3rem #c3013b);
+}
+
+#lamborghini-img:hover {
+  filter: drop-shadow(1rem 1rem 3rem #fbc90f);
 }
 
 .new-releases-card:hover img {
@@ -230,7 +249,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  height: auto;
+  width: auto;
 }
 
 /* Reuse this for removing list styling */
