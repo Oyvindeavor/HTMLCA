@@ -1,39 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;500;700&display=swap");
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*-------->>> =Resets <<<-------------*/
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*-------->>> =Resets <<<-----------------------*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 * {
-  -moz-box-sizing: border-box; /* Firefox */
+  /* Firefox */
+  -moz-box-sizing: border-box;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*-------->>> =Variables <<<----------*/
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*-------->>> =Variables <<<--------------------*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 :root {
-  --font-primary: "Poppins", sans-serif; /* Main Font */
-  --font-secondary: "Lora", serif; /* Secondary font */
-  --main-color: #008787; /* Main background color */
-  --hdr-footer-color: #ccc; /* Header and footer color */
-  --emphasis-text-color: #ffae00; /* Headline text color (em emphasis) */
-  --body-txt-color: black; /* Body text color (p) */
-  --icons-color: black; /* All google icons color */
-  --horizontal-line-color: #ffae00; /* Horizontal line (hr tag) color */
-  --star-rating-color: yellow; /* Star rating color */
-  --product-card-background-color: #019b9b; /* Product card background color */
-  --button-background-color-prodpage: #018c8c; /*Button background color on product page */
-  --link-color: blue; /* Link color */
-  --btn-text-color-card: #fff; /* Button text color on moviecards (videos page) */
-  --border-radius: 10px; /* Border radius for images/buttons/divs */
-  --breadcrumb-icon-size: 10px; /* Breadcrumb icon size */
+  /* Main Font */
+  --font-primary: "Poppins", sans-serif;
+
+  /* Secondary font */
+  --font-secondary: "Lora", serif;
+
+  /* Main background color */
+  --main-color: #008787;
+
+  /* Header and footer color */
+  --hdr-footer-color: #ccc;
+
+  /* Headline text color (em emphasis) */
+  --emphasis-text-color: #ffae00;
+
+  /* Body text color (p) */
+  --body-txt-color: black;
+
+  /* All google icons color */
+  --icons-color: black;
+
+  /* Horizontal line (hr tag) color */
+  --horizontal-line-color: #ffae00;
+
+  /* Star rating color */
+  --star-rating-color: yellow;
+
+  /* Product card background color */
+  --product-card-background-color: #019b9b;
+
+  /*Button background color on product page */
+  --button-background-color-prodpage: #018c8c;
+
+  /* Link color */
+  --link-color: blue;
+
+  /* Button text color on moviecards (videos page) */
+  --btn-text-color-card: #fff;
+
+  --sidebar-color: #ccc;
+
+  /* Border radius for images/buttons/divs */
+  --border-radius: 10px;
+
+  /* Breadcrumb icon size */
+  --breadcrumb-icon-size: 10px;
 }
 
 /* -------------------------------------------- */
-/* -------->>> =Global & Layout <<<------------ */
+/* -------->>> =Global & =Layout <<<----------- */
 /* -------------------------------------------- */
 
 header {
@@ -54,9 +87,17 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: var(--main-color);
+
+  /*
+  #Main grid layout# 
+	grid-template-columns sets margin 150px left,right middle to auto
+	grid-template-rows sets header 100px, footer 150px, main content auto
+
+*/
+
   display: grid;
-  grid-template-columns: 150px auto 150px; /* 150px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
-  grid-template-rows: 100px auto 150px; /* This sets the header 100px the main content to auto to stretch and the footer to 150px */
+  grid-template-columns: 150px auto 150px;
+  grid-template-rows: 100px auto 150px;
   grid-template-areas:
     "header header header"
     "....   main   ...."
@@ -87,8 +128,9 @@ img {
 /* -------->>> =Header/=Navigation <<<-------------*/
 /* ------------------------------------------------*/
 
+/* This is the container for the header i place everything inside here */
+
 .header-container {
-  /* This is the container for the header i place everything inside here */
   justify-content: space-between;
   margin: 0 150px; /* This makes the margin on bothe sides 150px this is to follow the main layout */
   height: 100%;
@@ -114,6 +156,10 @@ img {
 
 .nav-buttons:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.hamburger {
+  display: none;
 }
 
 /* -----------------------------------------*/
@@ -153,41 +199,10 @@ img {
   transform: scale(1.1);
   filter: drop-shadow(1rem 1rem 3rem rgba(0, 0, 0, 0.5));
 }
-
-/* -----------------------------------------*/
-/* -------->>> =Product Page <<<------------*/
-/* -----------------------------------------*/
-/* container for the banner/backdrop */
-.img-product-page {
-  width: 20%;
-  border-radius: var(--border-radius);
-  border-color: black;
-  box-shadow: 3px 3px 3px 3px black;
-}
-
-/* container for the movie title, rating, and overview */
-.overview {
-  margin: 30px;
-}
-
-iframe {
-  /* Youtube video */
-  border: none; /* Removes border, all youtube links have a border that looks ugly */
-  margin: 40px;
-  height: 400px;
-  width: 50%;
-  border-radius: var(--border-radius);
-  box-shadow: 3px 3px 3px 3px black;
-}
-
-.star-rating {
-  color: var(--star-rating-color);
-  font-variation-settings: "FILL" 1; /* This fills the stars with color */
-}
-
-/* -----------------------------------------*/
-/* -------->>> =Videos Page <<<-------------*/
-/* -----------------------------------------*/
+/* -------------------------------------------*/
+/* -------->>> =Main content------------------*/
+/* ------------=Videos Page <<<---------------*/
+/* -------------------------------------------*/
 /* Grid container for movie cards - */
 .movie-cards-grid {
   display: grid;
@@ -251,6 +266,110 @@ iframe {
   justify-content: center; /* Center align the buttons */
   flex-wrap: wrap;
   margin: 10px;
+}
+
+/* --------------------------------------------*/
+/* -------->>> =Main content-------------------*/
+/* ------------=Product page <<<---------------*/
+/* --------------------------------------------*/
+/* container for the banner/backdrop */
+.img-product-page {
+  width: 20%;
+  border-radius: var(--border-radius);
+  border-color: black;
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+/* container for the movie title, rating, and overview */
+.overview {
+  margin: 30px;
+}
+
+iframe {
+  /* Youtube video */
+  border: none; /* Removes border, all youtube links have a border that looks ugly */
+  margin: 40px;
+  height: 400px;
+  width: 50%;
+  border-radius: var(--border-radius);
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.star-rating {
+  color: var(--star-rating-color);
+  font-variation-settings: "FILL" 1; /* This fills the stars with color */
+}
+
+/* -----------------------------------------*/
+/* -------->>> =Main content----------------*/
+/* ------------=Cart <<<--------------------*/
+/* -----------------------------------------*/
+
+.breadcrumb-cart {
+  /* This is breadcrumbs specific to the cart */
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.breadcrumb-cart span {
+  /* Styling for the breadcrumb icons (arrow) */
+  font-size: var(--breadcrumb-icon-size);
+  font-weight: 700;
+}
+
+.wrapper-cart-section1 {
+  /* Wrapper for the cart */
+  width: 100%;
+  height: 300px;
+}
+
+.wrapper-cart-section1 img {
+  /* Movie product for the cart */
+  width: auto;
+  border-radius: var(--border-radius);
+}
+
+.cart-item-name {
+  /* Styling for the movie name */
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+.price-cart {
+  width: 100%;
+  justify-content: right;
+  align-items: center;
+}
+
+.cart-spacebetween {
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.credit-card {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img-wrapper {
+  /* Wrapper for the image purchased product */
+  width: 40%;
+  border-radius: var(--border-radius);
+}
+
+.img-wrapper img {
+  border-radius: var(--border-radius);
 }
 
 /* -----------------------------------*/
@@ -332,7 +451,7 @@ iframe {
 
 .material-symbols-outlined.size {
   /* (.material-symbols-outlined size) Google icon size and styling reuse this use the same size icon for all main icons */
-  display: block; /* THis is so my label text under it gets displayed on a new line */
+  display: block; /* This is so my label text under it gets displayed on a new line */
   font-size: 40px;
   color: var(--icons-color);
 }
@@ -418,82 +537,13 @@ p {
   width: 100%;
   height: 150px;
 }
-/* ------------------------------------*/
-/* -------->>> =Cart <<<---------------*/
-/* ------------------------------------*/
-
-.breadcrumb-cart {
-  /* This is breadcrumbs specific to the cart */
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.breadcrumb-cart span {
-  /* Styling for the breadcrumb icons (arrow) */
-  font-size: var(--breadcrumb-icon-size);
-  font-weight: 700;
-}
-
-.wrapper-cart-section1 {
-  /* Wrapper for the cart */
-  width: 100%;
-  height: 300px;
-}
-
-.wrapper-cart-section1 img {
-  /* Movie product for the cart */
-  width: auto;
-  border-radius: var(--border-radius);
-}
-
-.cart-item-name {
-  /* Styling for the movie name */
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px;
-}
-
-.price-cart {
-  width: 100%;
-  justify-content: right;
-  align-items: center;
-}
-
-.cart-spacebetween {
-  justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.cart-content-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.credit-card {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.img-wrapper {
-  /* Wrapper for the image purchased product */
-  width: 40%;
-  border-radius: var(--border-radius);
-}
-
-.img-wrapper img {
-  border-radius: var(--border-radius);
-}
 
 /* --------------------------------------*/
 /* -------->>> =Media Querys <<<---------*/
 /* --------------------------------------*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1200px) {
+  /*---- Layout----*/
   body {
     background-color: var(--main-color);
     display: grid;
@@ -504,11 +554,47 @@ p {
       "main"
       "footer";
   }
+
+  /* -- navigation__menu -- */
   .nav-buttons {
     /* Hides the main nav links on mobile */
     display: none;
   }
 
+  .hamburger {
+    display: block; /* Shows the hamburger menu on mobile */
+    position: fixed; /* This is so the hamburger menu stays fixed on the screen */
+    left: 0;
+    z-index: 1;
+  }
+
+  .hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    z-index: 1;
+    width: 50%;
+    transition: left 0.3s ease;
+    font-size: 40px;
+  }
+
+  input#hamburger-on:checked + label.hamburger-menu + aside.hamburger-menu {
+    left: 0;
+  }
+
+  input#hamburger-on:not(:checked) + label.hamburger-button + aside.hamburger-menu {
+    left: 100%;
+    transition: ease-out 0.3s;
+  }
+
+  input[type="checkbox"] {
+    /* Hides the checkbox */
+    display: none;
+  }
+
+  /*-- Form styling --*/
   .form-container {
     width: 70%;
     height: auto;
@@ -519,6 +605,7 @@ p {
     margin: 0 50px;
   }
 
+  /* 		-- Typography -- */
   h1 {
     font-size: 45px;
     font-weight: 700;
@@ -550,7 +637,7 @@ p {
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   body {
     min-height: 100vh;
     background-color: var(--main-color);
