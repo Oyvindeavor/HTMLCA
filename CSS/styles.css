@@ -117,10 +117,9 @@ img {
 }
 
 /* -----------------------------------------*/
-/* -------->>> =Main content <<<------------*/
+/* -------->>> =Main content----------------*/
+/* ------------=Home page <<<---------------*/
 /* -----------------------------------------*/
-
-/* -------->>> =Hero section <<<-------------*/
 
 .hero-section {
   min-height: 400px;
@@ -131,7 +130,6 @@ img {
   position: relative;
 }
 
-/* -------->>> =New releases section <<<-------------*/
 /* Container for the new releases section */
 .new-releases {
   border-radius: var(--border-radius);
@@ -143,12 +141,12 @@ img {
   padding: 20px;
 }
 
-/* Container that wraps the whole image */
 .img-card {
   border-radius: var(--border-radius);
   height: auto;
   width: 80%; /* Use this to control the container */
 }
+
 /* On hover scales the image up and add a border radius adds drop shadow */
 .img-card:hover {
   transition: transform 0.2s ease-in-out;
@@ -495,55 +493,6 @@ p {
 /* -------->>> =Media Querys <<<---------*/
 /* --------------------------------------*/
 
-@media screen and (max-width: 480px) {
-  body {
-    background-color: var(--main-color);
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-  }
-
-  main {
-    /* Small amount of padding so the text doesnt touch the edge of the screen */
-    padding: 0 0.5px;
-  }
-
-  h1 {
-    /* Headline text */
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 44px;
-    letter-spacing: 0;
-  }
-
-  h2,
-  h3,
-  h4 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: 0;
-  }
-
-  p {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0.4px;
-  }
-
-  label {
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 0.5px;
-  }
-}
-
 @media screen and (min-width: 481px) and (max-width: 768px) {
   body {
     background-color: var(--main-color);
@@ -555,11 +504,19 @@ p {
       "main"
       "footer";
   }
+  .nav-buttons {
+    /* Hides the main nav links on mobile */
+    display: none;
+  }
 
   .form-container {
     width: 70%;
     height: auto;
     padding: 5%;
+  }
+
+  .header-container {
+    margin: 0 50px;
   }
 
   h1 {
@@ -598,7 +555,7 @@ p {
     min-height: 100vh;
     background-color: var(--main-color);
     display: grid;
-    grid-template-columns: 150px auto 150px; /* 250px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
+    grid-template-columns: 150px auto 150px; /* 150px on the left and, right. and the middle is set to auto to stretch whatever content i put in. */
     grid-template-rows: 100px auto 150px; /* This sets the header 100px the main content to auto to stretch and the footer to 150px */
     grid-template-areas:
       "header header header"
