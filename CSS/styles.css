@@ -27,7 +27,7 @@
   --main-color: #008787;
 
   /* Header and footer color */
-  --hdr-footer-color: #ccc;
+  --hdr-footer-color: #011e3f;
 
   /* Headline text color (em emphasis) */
   --emphasis-text-color: #ffae00;
@@ -45,7 +45,7 @@
   --star-rating-color: yellow;
 
   /* Product card background color */
-  --product-card-background-color: #019b9b;
+  --product-card-background-color: transparent;
 
   /*Button background color on product page */
   --button-background-color-prodpage: #018c8c;
@@ -56,6 +56,7 @@
   /* Button text color on moviecards (videos page) */
   --btn-text-color-card: #fff;
 
+  /* Color for the hamnurger sidebar */
   --sidebar-color: #ccc;
 
   /* Border radius for images/buttons/divs */
@@ -89,7 +90,6 @@ body {
   background-color: var(--main-color);
 
   /*
-  #Main grid layout# 
 	grid-template-columns sets margin 150px left,right middle to auto
 	grid-template-rows sets header 100px, footer 150px, main content auto
 
@@ -107,7 +107,7 @@ body {
 html {
   overflow-x: hidden; /* Fix for scrollbar jumping dont remove, no clue why it works but... it works*/
   margin-right: calc(-1 * (100vw - 100%)); /* Fix for scrollbar jumping, no clue why it works but... it works*/
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scroll */
 }
 
 a {
@@ -154,10 +154,12 @@ img {
   color: white; /* Change the text color on hover and active */
 }
 
+/* Shadow for the nav buttons */
 .nav-buttons:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
+/* Hides hamburger menu on desktop */
 .hamburger {
   display: none;
 }
@@ -169,7 +171,7 @@ img {
 
 .hero-section {
   min-height: 400px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../media/assets/othercontent/movie-background-collage 1.png"); /* Background img with overlay */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../media/assets/8210359@2x.png"); /* Background img with overlay */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -179,8 +181,8 @@ img {
 /* Container for the new releases section */
 .new-releases {
   border-radius: var(--border-radius);
-  background-color: #000000;
-  border: 1px solid #ffae00;
+  background-color: transparent;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: auto;
   height: auto;
@@ -203,7 +205,7 @@ img {
 /* -------->>> =Main content------------------*/
 /* ------------=Videos Page <<<---------------*/
 /* -------------------------------------------*/
-/* Grid container for movie cards - */
+
 .movie-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
@@ -211,18 +213,20 @@ img {
   justify-content: center;
 }
 
-/* Styles for movie cards */
+/* Styles for movie cards
+   i use flex and positioning here makes no sense to reapply to 10+ product cards
+   in html. */
 .movie-card {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: left;
   background-color: var(--product-card-background-color);
   border-radius: 10px;
   padding: 10px;
   transition: transform 0.2s;
   margin: 10px;
   box-shadow: 0 0 2px #ccc;
+  height: auto;
 }
 
 /* Hover effect for movie cards */
@@ -245,7 +249,7 @@ img {
   padding: 0 10px;
 }
 
-/* Button styles */
+/* Button style */
 .button-style {
   background-color: var(--button-background-color-prodpage);
   color: var(--btn-text-color-card);
@@ -256,6 +260,7 @@ img {
   font-weight: bold;
   transition: background-color 0.2s;
   margin-top: 10px;
+  display: none; /* hides the add to cart button on the movie cards */
 }
 
 .button-style:hover {
@@ -540,10 +545,11 @@ p {
 }
 
 /* --------------------------------------*/
-/* -------->>> =Media Querys <<<---------*/
+/* -------->>> =Media Querys
+                SMALL SCREEN <<<---------*/
 /* --------------------------------------*/
 
-@media only screen and (min-width: 480px) and (max-width: 630px) {
+@media only screen and (min-width: 300px) and (max-width: 630px) {
   /*---- Layout----*/
 
   body {
@@ -629,38 +635,53 @@ p {
     justify-content: start; /* Thanks stack overflow! */
   }
 
-  /* !!!!!!!!!!!!!!!!!! TYPOGRAPHY IS WRONG FIX THIS !!!!!!!!!!!!!!!!!!
-  /* 		-- Typography -- */
+  /* 		-- Typography following google material design */
+
   h1 {
-    font-size: 45px;
+    font-size: 22px;
     font-weight: 700;
-    line-height: 52px;
+    line-height: 28px;
     letter-spacing: 0;
   }
 
-  h2,
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.15px;
+  }
+
   h3,
   h4 {
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 44px;
+    letter-spacing: 0;
+  }
+  /* Custom class for big text (hero section) */
+  .big-headline {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
     letter-spacing: 0;
   }
 
   p {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.25px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
   }
 
   label {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 500;
     line-height: 16px;
     letter-spacing: 0.5px;
   }
 }
+
+/* MEdia querys for tablets */
 
 @media screen and (min-width: 601px) and (max-width: 1240px) {
   body {
@@ -676,7 +697,6 @@ p {
       "footer";
   }
 
-  /* -- navigation__menu -- */
   .nav-buttons {
     /* Hides the main nav links on mobile */
     display: none;
@@ -689,9 +709,6 @@ p {
     z-index: 2;
     width: 100%;
     height: 100px;
-  }
-
-  .logo {
   }
 
   /* Hamburger menu */
@@ -742,31 +759,39 @@ p {
 
   /* 		-- Typography -- */
   h1 {
-    font-size: 45px;
-    font-weight: 700;
-    line-height: 52px;
-    letter-spacing: 0;
-  }
-
-  h2,
-  h3,
-  h4 {
     font-size: 28px;
     font-weight: 700;
     line-height: 36px;
     letter-spacing: 0;
   }
 
+  h2,
+  h3,
+  h4 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0;
+  }
+
+  /* Custom class for big text (hero section) */
+  .big-headline {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0;
+  }
+
   p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 24px;
     letter-spacing: 0.25px;
   }
 
   label {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 16px;
     letter-spacing: 0.5px;
   }
