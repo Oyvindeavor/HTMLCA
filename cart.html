@@ -15,9 +15,12 @@
   <body>
     <header>
       <div class="header-container flex align-items-center">
+        <!--Logo-->
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
+          <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
         </div>
+
+        <!--Navigation-->
         <nav>
           <ul class="no-list inline">
             <li>
@@ -34,88 +37,146 @@
             </li>
           </ul>
         </nav>
+
+        <!--Hamburger menu hidden by default, activated in media querys for mobile-->
+        <nav class="hamburger">
+          <input type="checkbox" id="hamburger-on" />
+          <label for="hamburger-on" class="hamburger-button">
+            <span class="material-symbols-outlined size">menu</span>
+          </label>
+
+          <aside class="hamburger-menu">
+            <a href="index.html"><span class="material-symbols-outlined size"> close </span></a>
+
+            <ul class="no-list">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="videos.html">Videos</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </aside>
+        </nav>
+
+        <!--Shopping cart-->
         <div class="flex direction-column align-items-center">
           <a href="emptycart.html">
             <span class="material-symbols-outlined size">shopping_cart</span>
           </a>
-          <label>Cart</label>
+          <label id="color-cart-label">Cart</label>
         </div>
       </div>
     </header>
+
     <main>
-     
-        <ol class="breadcrumb-cart no-list inline margin-column-row">
-          <li class="breadcrumb-item">
-            <a href="index.html">Cart</a>
-            <span class="material-symbols-outlined">navigate_next</span>
-          </li>
-          <li class="breadcrumb-item"><a href="videos.html">Information</a></li>
-          <li class="breadcrumb-item"><a href="about.html">Payment</a></li>
-        </ol>
-        <div class="flex wrapper-cart-section1 margin-column-row">
-          <img src="media/assets/epic.jpg" />
-          <div class="flex cart-item-name">
-            <h2>Epic</h2>
-            <p>Digital</p>
-          </div>
-          <div class="flex price-cart">
-            <a href="emptycart.html">
-              <span class="material-symbols-outlined">delete</span>
-            </a>
+      <!--Breadcrumb Cart-->
+      <ol class="breadcrumb-cart no-list inline margin-column-row">
+        <li class="breadcrumb-item">
+          <a href="index.html">Cart</a>
+          <span class="material-symbols-outlined">navigate_next</span>
+        </li>
+        <li class="breadcrumb-item"><a href="videos.html">Information</a></li>
+        <li class="breadcrumb-item"><a href="about.html">Payment</a></li>
+      </ol>
+
+      <!--Cart wrapper section1-->
+      <div class="flex wrapper-cart-section1 margin-column-row">
+        <!--Cart item-->
+        <img src="media/assets/godzilla-king-of-the-monsters-2019.jpeg" alt="Movie poster for Godzilla king of the monsters 2019" />
+        <!--Cart item name-->
+        <div class="flex cart-item-name">
+          <h2>Godzilla</h2>
+          <p>Digital</p>
+        </div>
+        <!--Cart item price-->
+        <div class="flex price-cart">
+          <a href="emptycart.html">
+            <span class="material-symbols-outlined">delete</span>
+          </a>
+          <h2>$9.99</h2>
+        </div>
+      </div>
+      <hr />
+      <!--Horizontal line-->
+      <!--Cart section 2-->
+      <div class="wrapper-cart-section2">
+        <div class="flex cart-spacebetween">
+          <h2>Subtotal</h2>
+          <h2>$7.00</h2>
+        </div>
+      </div>
+      <hr />
+      <!--Horizontal line-->
+      <!--Cart section 3-->
+      <div class="wrapper-cart-section3">
+        <div class="flex cart-spacebetween">
+          <h2>Taxes</h2>
+          <h2>$2.99</h2>
+        </div>
+      </div>
+      <hr />
+      <!--Horizontal line-->
+      <!--Cart section 4-->
+      <div class="wrapper-cart-section4">
+        <div class="flex cart-spacebetween">
+          <h2>Total</h2>
+          <div class="cart-price-usd">
             <h2>$9.99</h2>
           </div>
         </div>
-        <hr />
-        <div class="wrapper-cart-section2">
-          <div class="flex cart-spacebetween">
-            <h2>Subtotal</h2>
-            <h2>$7.00</h2>
-          </div>
-        </div>
-        <hr />
-        <div class="wrapper-cart-section3">
-          <div class="flex cart-spacebetween">
-            <h2>Taxes</h2>
-            <h2>$2.99</h2>
-          </div>
-        </div>
-        <hr />
-        <div class="wrapper-cart-section4">
-          <div class="flex cart-spacebetween">
-            <h2>Total</h2>
-            <div class="cart-price-usd">
-              <h2>$9.99</h2>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-cart-section5">
-          <div class="flex cart-spacebetween">
-            <a class="button" href="videos.html">Continue Shopping</a>
-            <div class="cart-payment">
-              <a class="button" href="cart-information.html"> Continue to information </a>
-            </div>
+      </div>
+      <!--Cart section 5-->
+      <div class="wrapper-cart-section5">
+        <div class="flex cart-spacebetween">
+          <a class="button" href="videos.html">Continue Shopping</a>
+
+          <div class="cart-payment">
+            <a class="button" href="cart-information.html"> Continue to information </a>
           </div>
         </div>
       </div>
     </main>
     <footer>
-      <div class="footer-container">
-        <a href="index.html"><img src="../media/logo.png" /></a>
-        <div class="footer-items">
-          <label>Quick links</label>
+      <div class="footer-container flex align-items-center">
+        <!--Logo-->
+        <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
+
+        <!--Copyright-->
+        &copy; 2023 Square Eyes. <br />
+        All rights reserved.
+
+        <!--Newsletter-->
+        <div class="newsletter form-container form-wrapper">
+          <label>Subscribe to our newsletter</label>
+          <input type="email" placeholder="Your email" />
+          <button class="button">Subscribe</button>
+        </div>
+
+        <!--Quick Links-->
+        <div class="quick-links flex direction-column">
+          <h3>Quick Links</h3>
           <ul class="no-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../videos.html">Videos</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="socials"><img src="#" /></div>
-        <label>
-          Movie images by <br />
-          <a href="https://www.themoviedb.org/">TMDB</a>
-        </label>
-        &copy; 2023 Square Eyes. All rights reserved.
+
+        <!--Socials-->
+        <div class="socials flex direction-column">
+          <h3>Socials</h3>
+          <a href="https://www.facebook.com/" target="_blank"><img src="media/assets/othercontent/facebook.png" alt="Facebook Logo" />Facebook</a>
+          <a href="https://twitter.com/" target="_blank"><img src="media/assets/othercontent/twitter.png" alt="Twitter Logo" />Twitter</a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="media/assets/othercontent/instagram.png" alt="Instagram Logo" />Instagram</a>
+        </div>
       </div>
     </footer>
   </body>

@@ -6,7 +6,6 @@
 * {
   /* Firefox */
   -moz-box-sizing: border-box;
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -36,7 +35,7 @@
   --body-txt-color: black;
 
   /* All google icons color */
-  --icons-color: black;
+  --icons-color: #00adad;
 
   /* Horizontal line (hr tag) color */
   --horizontal-line-color: #ffae00;
@@ -51,7 +50,7 @@
   --button-background-color-prodpage: #018c8c;
 
   /* Link color */
-  --link-color: blue;
+  --link-color: rgb(0, 115, 255);
 
   /* Button text color on moviecards (videos page) */
   --btn-text-color-card: #fff;
@@ -90,14 +89,12 @@ body {
   background-color: var(--main-color);
 
   /*
-	grid-template-columns sets margin 150px left,right middle to auto
-	grid-template-rows sets header 100px, footer 150px, main content auto
-
-*/
-
+	grid-template-columns sets margin 150px left,right and middle to auto
+	grid-template-rows sets header 100px, footer 200px, main content auto
+  */
   display: grid;
   grid-template-columns: 150px auto 150px;
-  grid-template-rows: 100px auto 150px;
+  grid-template-rows: 100px auto 200px;
   grid-template-areas:
     "header header header"
     "....   main   ...."
@@ -113,6 +110,7 @@ html {
 a {
   text-decoration: none; /* Removes the underline on all links */
   cursor: pointer; /* Every a element has a pointer cursor, i need this here since some links didnt have it */
+  color: var(--link-color);
 }
 
 p {
@@ -128,20 +126,17 @@ img {
 /* -------->>> =Header/=Navigation <<<-------------*/
 /* ------------------------------------------------*/
 
-/* This is the container for the header i place everything inside here */
-
 .header-container {
-  justify-content: space-between;
+  justify-content: space-between; /* controls the items in the header */
   margin: 0 150px; /* This makes the margin on bothe sides 150px this is to follow the main layout */
   height: 100%;
 }
 
-/* Styling Nav buttons */
 .nav-buttons {
   font-family: var(--font-primary);
   font-weight: 700;
   padding: 10px 20px; /* Padding vertical 10px, horizontal 20px */
-  color: black; /* Black text color */
+  color: #00adad; /* Black text color */
   border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
   transition: transform 0.2s ease-in-out;
@@ -162,6 +157,10 @@ img {
 /* Hides hamburger menu on desktop */
 .hamburger {
   display: none;
+}
+
+#color-cart-label {
+  color: var(--icons-color);
 }
 
 /* -----------------------------------------*/
@@ -213,9 +212,7 @@ img {
   justify-content: center;
 }
 
-/* Styles for movie cards
-   i use flex and positioning here makes no sense to reapply to 10+ product cards
-   in html. */
+/* Styles for movie cards */
 .movie-card {
   display: flex;
   flex-direction: column;
@@ -226,7 +223,6 @@ img {
   transition: transform 0.2s;
   margin: 10px;
   box-shadow: 0 0 2px #ccc;
-  height: auto;
 }
 
 /* Hover effect for movie cards */
@@ -249,8 +245,8 @@ img {
   padding: 0 10px;
 }
 
-/* Button style */
-.button-style {
+/* Button style videos page*/
+.button-style-videos {
   background-color: var(--button-background-color-prodpage);
   color: var(--btn-text-color-card);
   padding: 10px 20px;
@@ -259,11 +255,17 @@ img {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
-  margin-top: 10px;
-  display: none; /* hides the add to cart button on the movie cards */
+  position: relative;
+  bottom: 0;
 }
 
-.button-style:hover {
+/* Small fix to keep the buttons at the bottom of the container */
+.movie-card label {
+  height: 100%;
+  word-break: keep-all;
+}
+
+.button-style-videos:hover {
   background-color: #016767;
 }
 
@@ -383,20 +385,32 @@ iframe {
 /* -----------------------------------*/
 /* All footer styling here */
 .footer-container {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   margin: 0 150px; /* Margin 150px on both sides to follow the main layout */
   height: 100%;
 }
 
-.footer-items a {
-  /* Container for items in the footer quick links, copyright etc.  */
+footer h3 {
+  /* Targets all h3 elements (the text on top of the links) */
+  color: white;
+}
+
+/* Targets links, aligns them with the icon */
+.socials a {
   display: flex;
-  flex-direction: column;
-  width: 90px;
-  color: var(--link-color);
-  font-family: var(--font-secondary);
+  align-items: center;
+}
+
+/* Social media icon img */
+.socials img {
+  margin: 4px;
+  width: 20%;
+}
+
+/* Reusing my form styles and tweak the height, width */
+.newsletter.form-container.form-wrapper {
+  width: 300px;
+  height: 150px;
 }
 
 /* --------------------------------------*/
@@ -487,7 +501,7 @@ iframe {
 /* ------------------------------------*/
 /* -------->>> =Typography <<<---------*/
 /* ------------------------------------*/
-/* The font sizes and lenghts are in the media querys */
+/* Following material design guidelines converting PT into PX using the formula */
 h1,
 h2,
 h3,
@@ -506,6 +520,30 @@ p {
   font-family: var(--font-secondary);
 }
 
+h1 {
+  font-size: 42.56px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0.1875px;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 29.3336px;
+  line-height: 37.3264px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 21.33 px;
+  line-height: 32px;
+  letter-spacing: 0.667px;
+}
+
+label {
+  font-size: 18.62px;
+}
 /* ------------------------------------*/
 /* -------->>> =Forms <<<--------------*/
 /* ------------------------------------*/
@@ -550,7 +588,7 @@ p {
 /* --------------------------------------*/
 
 @media only screen and (min-width: 300px) and (max-width: 630px) {
-  /*---- Layout----*/
+  /*----layout----*/
 
   body {
     margin: 0;
@@ -571,7 +609,7 @@ p {
     display: none;
   }
 
-  /* Change the header to be fixed so it follow you while scrolling on mobile */
+  /* Change the header to be fixed so it follow you while scrolling on mobile  */
   header {
     display: flex;
     position: fixed;
@@ -580,13 +618,10 @@ p {
     height: 100px;
   }
 
-  .logo {
-  }
-
   /* Hamburger menu */
   .hamburger {
     display: block; /* Shows the hamburger menu on mobile */
-    position: fixed; /* This is so the hamburger menu stays fixed on the screen */
+    position: fixed; /* This is so the hamburger menu stays fixed on the screen along with the header */
     left: 0;
     z-index: 1;
   }
@@ -635,55 +670,53 @@ p {
     justify-content: start; /* Thanks stack overflow! */
   }
 
+  /* Footer */
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
+  .footer-container .logo {
+    display: none;
+  }
+
   /* 		-- Typography following google material design */
 
   h1 {
-    font-size: 22px;
+    font-size: 31.92px;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 42.67px;
     letter-spacing: 0;
   }
 
-  h2 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 28px;
-    letter-spacing: 0.15px;
-  }
-
+  h2,
   h3,
   h4 {
-    font-size: 16px;
+    font-size: 18.67px;
     font-weight: 700;
-    line-height: 44px;
-    letter-spacing: 0;
-  }
-  /* Custom class for big text (hero section) */
-  .big-headline {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 44px;
-    letter-spacing: 0;
+    line-height: 26.67px;
+    letter-spacing: 0.13px;
   }
 
   p {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0.4px;
+    line-height: 23.32px;
+    letter-spacing: 0.53px;
   }
 
   label {
-    font-size: 11px;
+    font-size: 14.663px;
     font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.5px;
+    line-height: 21.328px;
+    letter-spacing: 0.69px;
   }
 }
 
-/* MEdia querys for tablets */
+/* Media querys for tablets */
 
-@media screen and (min-width: 601px) and (max-width: 1240px) {
+@media screen and (min-width: 601px) and (max-width: 1020px) {
   body {
     margin: 0;
     padding: 0;
@@ -759,42 +792,39 @@ p {
 
   /* 		-- Typography -- */
   h1 {
-    font-size: 28px;
+    font-size: 38.88px;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 50px;
     letter-spacing: 0;
   }
 
   h2,
   h3,
   h4 {
-    font-size: 22px;
+    font-size: 21.33px;
     font-weight: 700;
-    line-height: 28px;
-    letter-spacing: 0;
-  }
-
-  /* Custom class for big text (hero section) */
-  .big-headline {
-    font-size: 45px;
-    font-weight: 700;
-    line-height: 52px;
-    letter-spacing: 0;
+    line-height: 32px;
+    letter-spacing: 0.2px;
   }
 
   p {
-    font-size: 16px;
+    font-size: 18.67px;
     font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.25px;
+    line-height: 26.67px;
+    letter-spacing: 0.33px;
   }
 
   label {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.33px;
+    letter-spacing: 0.66px;
   }
+}
+
+/* Desktop media querys */
+@media (min-width: 1024px) {
+  /* Typography */
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -802,16 +832,3 @@ p {
 
 @media screen and (min-width: 1024px) {
 }
-
-/*                               _.-="_-         _
-                         _.-="   _-          | ||"""""""---._______     __..
-             ___.===""""-.______-,,,,,,,,,,,,`-''----" """""       """""  __'
-      __.--""     __        ,'                   o \           __        [__|
- __-""=======.--""  ""--.=================================.--""  ""--.=======:
-]       [Ø] : /        \ : |========================|    : /        \ :  [Ø] :
-V___________:|          |: |========================|    :|          |:   _-"
- V__________: \        / :_|=======================/_____: \        / :__-"
- -----------'  "-____-"  `-------------------------------'  "-____-"
-
-- Øyvind
- */

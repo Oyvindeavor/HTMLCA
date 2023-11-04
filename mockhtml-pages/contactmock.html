@@ -16,25 +16,62 @@
   <body>
     <header>
       <div class="header-container flex align-items-center">
+        <!--Logo-->
         <div class="logo">
-          <a href="index.html"><img src="../media/logo.png" alt="Logo" /></a>
+          <a href="index.html"><img src="../media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
         </div>
+
+        <!--Navigation-->
         <nav>
           <ul class="no-list inline">
-            <!---Removes list, adds display inline-->
             <li>
               <a class="nav-buttons" href="../index.html">Home</a>
             </li>
-            <li><a class="nav-buttons" href="../videos.html">Videos</a></li>
-            <li><a class="nav-buttons" href="../about.html">About</a></li>
-            <li><a class="nav-buttons" href="../contact.html">Contact</a></li>
+            <li>
+              <a class="nav-buttons" href="../videos.html">Videos</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="../about.html">About</a>
+            </li>
+            <li>
+              <a class="nav-buttons" href="../contact.html">Contact</a>
+            </li>
           </ul>
         </nav>
+
+        <!--Hamburger menu hidden by default, activated in media querys for mobile-->
+        <nav class="hamburger">
+          <input type="checkbox" id="hamburger-on" />
+          <label for="hamburger-on" class="hamburger-button">
+            <span class="material-symbols-outlined size">menu</span>
+          </label>
+
+          <aside class="hamburger-menu">
+            <a href="index.html"><span class="material-symbols-outlined size"> close </span></a>
+
+            <ul class="no-list">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="videos.html">Videos</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </aside>
+        </nav>
+
+        <!--Shopping cart-->
         <div class="flex direction-column align-items-center">
           <a href="emptycart.html">
             <span class="material-symbols-outlined size">shopping_cart</span>
           </a>
-          <label>Cart</label>
+          <label id="color-cart-label">Cart</label>
         </div>
       </div>
     </header>
@@ -48,10 +85,24 @@
       <!--Thank you message end-->
     </main>
     <footer>
-      <div class="footer-container">
-        <a href="../index.html"><img src="../media/logo.png" /></a>
-        <div class="footer-items">
-          <label>Quick links</label>
+      <div class="footer-container flex align-items-center">
+        <!--Logo-->
+        <a href="../index.html"><img src="../media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
+
+        <!--Copyright-->
+        &copy; 2023 Square Eyes. <br />
+        All rights reserved.
+
+        <!--Newsletter-->
+        <div class="newsletter form-container form-wrapper">
+          <label>Subscribe to our newsletter</label>
+          <input type="email" placeholder="Your email" />
+          <button class="button">Subscribe</button>
+        </div>
+
+        <!--Quick Links-->
+        <div class="quick-links flex direction-column">
+          <h3>Quick Links</h3>
           <ul class="no-list">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../videos.html">Videos</a></li>
@@ -59,12 +110,14 @@
             <li><a href="../contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="socials"><img src="#" /></div>
-        <label>
-          Movie images by <br />
-          <a href="https://www.themoviedb.org/">TMDB</a>
-        </label>
-        &copy; 2023 Square Eyes. All rights reserved.
+
+        <!--Socials-->
+        <div class="socials flex direction-column">
+          <h3>Socials</h3>
+          <a href="https://www.facebook.com/" target="_blank"><img src="media/assets/othercontent/facebook.png" alt="Facebook Logo" />Facebook</a>
+          <a href="https://twitter.com/" target="_blank"><img src="media/assets/othercontent/twitter.png" alt="Twitter Logo" />Twitter</a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="media/assets/othercontent/instagram.png" alt="Instagram Logo" />Instagram</a>
+        </div>
       </div>
     </footer>
   </body>

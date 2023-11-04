@@ -18,7 +18,6 @@
     <link rel="icon" type="image/png" href="media/favicon.png" />
     <title>Videos</title>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/videos.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!---Google icons-->
   </head>
@@ -26,9 +25,12 @@
   <body>
     <header>
       <div class="header-container flex align-items-center">
+        <!--Logo-->
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
+          <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
         </div>
+
+        <!--Navigation-->
         <nav>
           <ul class="no-list inline">
             <li>
@@ -45,36 +47,67 @@
             </li>
           </ul>
         </nav>
+
+        <!--Hamburger menu hidden by default, activated in media querys for mobile-->
+        <nav class="hamburger">
+          <input type="checkbox" id="hamburger-on" />
+          <label for="hamburger-on" class="hamburger-button">
+            <span class="material-symbols-outlined size">menu</span>
+          </label>
+
+          <aside class="hamburger-menu">
+            <a href="index.html"><span class="material-symbols-outlined size"> close </span></a>
+
+            <ul class="no-list">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="videos.html">Videos</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </aside>
+        </nav>
+
+        <!--Shopping cart-->
         <div class="flex direction-column align-items-center">
           <a href="emptycart.html">
             <span class="material-symbols-outlined size">shopping_cart</span>
           </a>
-          <label>Cart</label>
+          <label id="color-cart-label">Cart</label>
         </div>
       </div>
     </header>
     <main>
+      <!--Movie category buttons-->
       <div class="main-content">
         <div class="category-buttons">
-          <a class="button-style" href="#">All</a>
-          <a class="button-style" href="#">Action</a>
-          <a class="button-style" href="#">Adventure</a>
-          <a class="button-style" href="#">Animation</a>
-          <a class="button-style" href="#">Comedy</a>
-          <a class="button-style" href="#">Horror</a>
-          <a class="button-style" href="#">Fantasy</a>
-          <a class="button-style" href="#">Romance</a>
+          <a class="button-style-videos" href="#">All</a>
+          <a class="button-style-videos" href="#">Action</a>
+          <a class="button-style-videos" href="#">Adventure</a>
+          <a class="button-style-videos" href="#">Animation</a>
+          <a class="button-style-videos" href="#">Comedy</a>
+          <a class="button-style-videos" href="#">Horror</a>
+          <a class="button-style-videos" href="#">Fantasy</a>
+          <a class="button-style-videos" href="#">Romance</a>
         </div>
+        <!--Movie cards grid-->
         <div class="movie-cards-grid">
+          <!--Movie card-->
           <div class="movie-card">
             <a href="productpage.html">
               <img src="media/assets/the-batman-2022.jpg" alt="The Batman Movie Poster" />
             </a>
             <h2>The Batman</h2>
             <h4>19.99$</h4>
-
             <label> In his second year as a crime-fighter, Batman discovers Gotham corruption tied to his family, battling the Riddler. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -82,8 +115,8 @@
             </a>
             <h2>Godzilla</h2>
             <h4>9.99$</h4>
-            <label> Monarch battles god-sized monsters, Godzilla, Mothra, Rodan, and King Ghidorah, threatening humanity. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <p>Monarch battles god-sized monsters, Godzilla, Mothra, Rodan, and King Ghidorah, threatening humanity.</p>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -91,8 +124,8 @@
             </a>
             <h2>Gangster Squad</h2>
             <h4>6.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> In 1949 LA, mob king Mickey Cohen rules with corrupt cops, but a secret LAPD crew aims to stop him. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -100,8 +133,8 @@
             </a>
             <h2>Amundsen</h2>
             <h4>10.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Roald Amundsen's polar expeditions, from conquering the South Pole in 1911 to his ultimate sacrifice in 1926. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -109,8 +142,8 @@
             </a>
             <h2>Her</h2>
             <h4>14.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label>In a near-future, a writer falls for an AI, exploring love and tech's impact. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -118,8 +151,8 @@
             </a>
             <h2>Shrek Forever After</h2>
             <h4>14.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Shrek makes a pact, but a twist in Far Far Away changes everything.</label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -127,8 +160,8 @@
             </a>
             <h2>The Great Gatsby</h2>
             <h4>14.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Nick enters Gatsby's opulent world but uncovers obsession, madness, and tragedy. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -136,8 +169,8 @@
             </a>
             <h2>Epic</h2>
             <h4>4.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> A teen joins a group to save both worlds in a forest battle of good vs. evil. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -145,8 +178,8 @@
             </a>
             <h2>The Addams Family</h2>
             <h4>6.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> The Addams family confronts a greedy reality-TV host amid celebration chaos. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -154,8 +187,8 @@
             </a>
             <h2>Scream</h2>
             <h4>10.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> A new Ghostface killer terrorizes Woodsboro, targeting teens and old secrets. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -163,8 +196,8 @@
             </a>
             <h2>Hobbs & Shaw</h2>
             <h4>6.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Hobbs and Shaw unite to stop enhanced anarchist Brixton.</label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -172,8 +205,8 @@
             </a>
             <h2>J.T.Leroy</h2>
             <h4>9.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Savannah Knoop pretends as JT Leroy, her sister-in-law's made-up transgender writer, for six years. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -181,8 +214,8 @@
             </a>
             <h2>lamborghini</h2>
             <h4>6.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Discover Lamborghini's evolution from tractor maker and wartime vehicle creator to the luxury sports car brand, Automobili Lamborghini, in 1963. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -190,8 +223,8 @@
             </a>
             <h2>Predators</h2>
             <h4>8.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> A group of cold-blooded killers find themselves trapped on an alien planet to be hunted by extraterrestrial Predators. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
           <div class="movie-card">
             <a href="productpage.html">
@@ -199,17 +232,31 @@
             </a>
             <h2>Rambo</h2>
             <h4>6.99$</h4>
-            <label> The tale of spy recruiter Vera Atkins, selecting brave women for Churchill's secret army. </label>
-            <a class="button-style" href="cart.html">Add to cart</a>
+            <label> Ex-Green Beret John Rambo leads mercenaries on a rescue mission in war-torn Myanmar. </label>
+            <a class="button-style-videos" href="cart.html">Add to cart</a>
           </div>
         </div>
       </div>
     </main>
     <footer>
-      <div class="footer-container">
-        <a href="index.html"><img src="media/logo.png" alt="Logo turqouise 3d glasses text Square Eyes, connecting Film Lovers" /></a>
-        <div class="footer-items">
-          <label>Quick links</label>
+      <div class="footer-container flex align-items-center">
+        <!--Logo-->
+        <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
+
+        <!--Copyright-->
+        &copy; 2023 Square Eyes. <br />
+        All rights reserved.
+
+        <!--Newsletter-->
+        <div class="newsletter form-container form-wrapper">
+          <label>Subscribe to our newsletter</label>
+          <input type="email" placeholder="Your email" />
+          <button class="button">Subscribe</button>
+        </div>
+
+        <!--Quick Links-->
+        <div class="quick-links flex direction-column">
+          <h3>Quick Links</h3>
           <ul class="no-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="videos.html">Videos</a></li>
@@ -217,12 +264,14 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="socials"><img src="#" /></div>
-        <label>
-          Movie images by <br />
-          <a href="https://www.themoviedb.org/">TMDB</a>
-        </label>
-        &copy; 2023 Square Eyes. All rights reserved.
+
+        <!--Socials-->
+        <div class="socials flex direction-column">
+          <h3>Socials</h3>
+          <a href="https://www.facebook.com/" target="_blank"><img src="media/assets/othercontent/facebook.png" alt="Facebook Logo" />Facebook</a>
+          <a href="https://twitter.com/" target="_blank"><img src="media/assets/othercontent/twitter.png" alt="Twitter Logo" />Twitter</a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="media/assets/othercontent/instagram.png" alt="Instagram Logo" />Instagram</a>
+        </div>
       </div>
     </footer>
   </body>

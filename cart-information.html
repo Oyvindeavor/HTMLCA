@@ -17,9 +17,12 @@
   <body class="white-background">
     <header>
       <div class="header-container flex align-items-center">
+        <!--Logo-->
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
+          <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
         </div>
+
+        <!--Navigation-->
         <nav>
           <ul class="no-list inline">
             <li>
@@ -36,18 +39,46 @@
             </li>
           </ul>
         </nav>
+
+        <!--Hamburger menu hidden by default, activated in media querys for mobile-->
+        <nav class="hamburger">
+          <input type="checkbox" id="hamburger-on" />
+          <label for="hamburger-on" class="hamburger-button">
+            <span class="material-symbols-outlined size">menu</span>
+          </label>
+
+          <aside class="hamburger-menu">
+            <a href="index.html"><span class="material-symbols-outlined size"> close </span></a>
+
+            <ul class="no-list">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="videos.html">Videos</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </aside>
+        </nav>
+
+        <!--Shopping cart-->
         <div class="flex direction-column align-items-center">
           <a href="emptycart.html">
             <span class="material-symbols-outlined size">shopping_cart</span>
           </a>
-          <label>Cart</label>
+          <label id="color-cart-label">Cart</label>
         </div>
       </div>
     </header>
     <main>
-      <!--Makes the main White background fast and easy-->
+      <!--Breadcrub cart-->
       <ol class="breadcrumb-cart no-list inline margin-column-row">
-        <!--Breadcrumb-cart is container, no list removes list, inline displays inline, Margin-columns-row adds 10px above and bottom-->
         <li class="breadcrumb-item">
           <a href="index.html">Cart</a>
           <span class="material-symbols-outlined">navigate_next</span>
@@ -58,9 +89,12 @@
         </li>
         <li class="breadcrumb-item"><a href="about.html">Payment</a></li>
       </ol>
+
+      <!--Cart content-->
       <div class="cart-content-wrapper">
         <div class="form-container">
           <div class="form-wrapper">
+            <!--Contact information form-->
             <form action="cart-payment.html">
               <h2>Contact Information</h2>
               <input type="email" id="email" name="email" placeholder="Email" required />
@@ -72,6 +106,8 @@
               <input type="text" id="city" name="city" placeholder="City" required />
               <input type="text" id="postalCode" name="postalCode" placeholder="Postal Code" required />
               <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
+
+              <!--Buttons-->
               <div class="cart-spacebetween">
                 <a class="button" href="cart.html">Return to cart</a>
                 <button class="button" id="submit" type="submit" value="submit">Submit</button>

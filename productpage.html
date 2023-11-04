@@ -17,9 +17,12 @@
   <body>
     <header>
       <div class="header-container flex align-items-center">
+        <!--Logo-->
         <div class="logo">
-          <a href="index.html"><img src="media/logo.png" alt="Logo" /></a>
+          <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
         </div>
+
+        <!--Navigation-->
         <nav>
           <ul class="no-list inline">
             <li>
@@ -36,41 +39,90 @@
             </li>
           </ul>
         </nav>
+
+        <!--Hamburger menu hidden by default, activated in media querys for mobile-->
+        <nav class="hamburger">
+          <input type="checkbox" id="hamburger-on" />
+          <label for="hamburger-on" class="hamburger-button">
+            <span class="material-symbols-outlined size">menu</span>
+          </label>
+
+          <aside class="hamburger-menu">
+            <a href="index.html"><span class="material-symbols-outlined size"> close </span></a>
+
+            <ul class="no-list">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="videos.html">Videos</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </aside>
+        </nav>
+
+        <!--Shopping cart-->
         <div class="flex direction-column align-items-center">
           <a href="emptycart.html">
             <span class="material-symbols-outlined size">shopping_cart</span>
           </a>
-          <label>Cart</label>
+          <label id="color-cart-label">Cart</label>
         </div>
       </div>
     </header>
 
     <main>
+      <!--Product page-->
       <div class="center margin-top">
-        <img class="img-product-page margin-column-row" src="media/assets/epic.jpg" alt="Poster for Epic: Characters from the movie posing in a field " />
+        <!--Product image-->
+        <img class="img-product-page margin-column-row" src="media/assets/godzilla-king-of-the-monsters-2019.jpeg" alt="Movie poster for Godzilla king of the monsters 2019" />
+
+        <!--Product information-->
         <div class="flex direction-column overview">
-          <h2>Epic (2013)</h2>
-          <p>07/06/2013</p>
-          <h3>Horror,Thriller</h3>
+          <h2>Godzilla King of The monsters</h2>
+          <p>31/05/2019</p>
+          <h3>Science fiction,Action</h3>
           <span class="star-rating material-symbols-outlined"> star star star star star </span>
           <h3>Overview</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam tenetur atque nulla quam et nemo blanditiis deleniti numquam praesentium libero nostrum harum porro fuga recusandae in,
-            qui magni distinctio. Ullam.
+            Follows the heroic efforts of the crypto-zoological agency Monarch as its members face off against a battery of god-sized monsters, including the mighty Godzilla, who collides with Mothra,
+            Rodan, and his ultimate nemesis, the three-headed King Ghidorah. When these ancient super-species, thought to be mere myths, rise again, they all vie for supremacy, leaving humanity's very
+            existence hanging in the balance.
           </p>
+          <!--Add to cart button-->
+          <a class="button" href="cart.html">Add to cart</a>
         </div>
       </div>
-      <div class="flex margin-column-row">
-        <iframe src="https://www.youtube.com/embed/BJVkoq_wK80?si=W1W8Nf2T2DOaerfP" title="YouTube video player"></iframe>
-      </div>
+      <!--Trailer-->
+      <iframe src="https://www.youtube.com/embed/VJ7__2aIpjw?si=A21qJQTdI3t8j4-L" title="Godzilla King of the monsters Trailer Youtube"></iframe>
+      <div class="flex margin-column-row"></div>
     </main>
 
     <footer>
-      <div class="footer-container">
-        <a href="index.html"><img src="media/logo.png" /></a>
+      <div class="footer-container flex align-items-center">
+        <!--Logo-->
+        <a href="index.html"><img src="media/logo.png" alt="Square Eyes Logo: Turquoise 3D glasses with 'Square Eyes' text and 'Connecting Film Lovers' " /></a>
 
-        <div class="footer-items">
-          <label>Quick links</label>
+        <!--Copyright-->
+        &copy; 2023 Square Eyes. <br />
+        All rights reserved.
+
+        <!--Newsletter-->
+        <div class="newsletter form-container form-wrapper">
+          <label>Subscribe to our newsletter</label>
+          <input type="email" placeholder="Your email" />
+          <button class="button">Subscribe</button>
+        </div>
+
+        <!--Quick Links-->
+        <div class="quick-links flex direction-column">
+          <h3>Quick Links</h3>
           <ul class="no-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="videos.html">Videos</a></li>
@@ -78,13 +130,14 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="socials"><img src="#" /></div>
-        <label>
-          Movie images by
-          <br />
-          <a href="https://www.themoviedb.org/">TMDB</a>
-        </label>
-        &copy; 2023 Square Eyes. All rights reserved.
+
+        <!--Socials-->
+        <div class="socials flex direction-column">
+          <h3>Socials</h3>
+          <a href="https://www.facebook.com/" target="_blank"><img src="media/assets/othercontent/facebook.png" alt="Facebook Logo" />Facebook</a>
+          <a href="https://twitter.com/" target="_blank"><img src="media/assets/othercontent/twitter.png" alt="Twitter Logo" />Twitter</a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="media/assets/othercontent/instagram.png" alt="Instagram Logo" />Instagram</a>
+        </div>
       </div>
     </footer>
   </body>
