@@ -50,7 +50,7 @@
   --button-background-color-prodpage: #018c8c;
 
   /* Link color */
-  --link-color: rgb(0, 115, 255);
+  --link-color: rgb(0, 0, 0);
 
   /* Button text color on moviecards (videos page) */
   --btn-text-color-card: #fff;
@@ -240,7 +240,7 @@ img {
 .movie-card label {
   margin-top: 10px;
   text-align: left;
-  font-size: 0.9rem;
+
   color: var(--body-text-color);
   padding: 0 10px;
 }
