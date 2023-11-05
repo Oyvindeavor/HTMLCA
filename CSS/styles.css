@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;500;700&display=swap");
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*-------->>> =Resets <<<-----------------------*/
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 * {
   /* Firefox */
   -moz-box-sizing: border-box;
@@ -12,7 +9,7 @@
 }
 
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*-------->>> =Variables <<<--------------------*/
+/*------------>>> =Variables <<<----------------*/
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 :root {
@@ -47,7 +44,7 @@
   --product-card-background-color: transparent;
 
   /*Button background color on product page */
-  --button-background-color-prodpage: #018c8c;
+  --button-background-color-prodpage: #0a1e3e;
 
   /* Link color */
   --link-color: rgb(0, 0, 0);
@@ -69,29 +66,10 @@
 /* -------->>> =Global & =Layout <<<----------- */
 /* -------------------------------------------- */
 
-header {
-  grid-area: header;
-  background-color: var(--hdr-footer-color);
-}
-
-main {
-  grid-area: main;
-}
-
-footer {
-  grid-area: footer;
-  background-color: var(--hdr-footer-color);
-}
-
 body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: var(--main-color);
-
-  /*
-	grid-template-columns sets margin 150px left,right and middle to auto
-	grid-template-rows sets header 100px, footer 200px, main content auto
-  */
   display: grid;
   grid-template-columns: 150px auto 150px;
   grid-template-rows: 100px auto 200px;
@@ -101,15 +79,32 @@ body {
     "footer footer footer";
 }
 
+header {
+  grid-area: header;
+  background-color: var(--hdr-footer-color);
+}
+
+main {
+  grid-area: main;
+  margin-bottom: 100px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--hdr-footer-color);
+}
+
 html {
-  overflow-x: hidden; /* Fix for scrollbar jumping dont remove, no clue why it works but... it works*/
-  margin-right: calc(-1 * (100vw - 100%)); /* Fix for scrollbar jumping, no clue why it works but... it works*/
-  scroll-behavior: smooth; /* Smooth scroll */
+  overflow-x: hidden;
+  /* Fix for scrollbar jumping dont remove, no clue why it works but... it works*/
+  margin-right: calc(-1 * (100vw - 100%));
+  /* Fix for scrollbar jumping dont remove, no clue why it works but... it works*/
+  scroll-behavior: smooth;
 }
 
 a {
-  text-decoration: none; /* Removes the underline on all links */
-  cursor: pointer; /* Every a element has a pointer cursor, i need this here since some links didnt have it */
+  text-decoration: none;
+  cursor: pointer;
   color: var(--link-color);
 }
 
@@ -127,42 +122,47 @@ img {
 /* ------------------------------------------------*/
 
 .header-container {
+  display: flex;
+  align-items: center;
   justify-content: space-between; /* controls the items in the header */
-  margin: 0 150px; /* This makes the margin on bothe sides 150px this is to follow the main layout */
+  margin: 0 150px;
   height: 100%;
 }
 
+.hamburger {
+  /* Hides hamburger menu on desktop */
+  display: none;
+}
+
+#color-cart-label {
+  /* Quick fix color for the cart label (text under the icon) */
+  color: var(--icons-color);
+}
+
+/* -------->>> Buttons header <<<-------------*/
 .nav-buttons {
+  /* Navigation buttons */
   font-family: var(--font-primary);
   font-weight: 700;
-  padding: 10px 20px; /* Padding vertical 10px, horizontal 20px */
-  color: #00adad; /* Black text color */
+  padding: 10px 20px;
+  color: #00adad;
   border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
   transition: transform 0.2s ease-in-out;
 }
 
-/* Change the background color on hover and active */
 .nav-buttons:hover,
 .nav-buttons.active {
   background-color: var(--main-color);
-  color: white; /* Change the text color on hover and active */
+  color: white;
 }
 
-/* Shadow for the nav buttons */
 .nav-buttons:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
-/* Hides hamburger menu on desktop */
-.hamburger {
-  display: none;
+.logo {
 }
-
-#color-cart-label {
-  color: var(--icons-color);
-}
-
 /* -----------------------------------------*/
 /* -------->>> =Main content----------------*/
 /* ------------=Home page <<<---------------*/
@@ -177,29 +177,44 @@ img {
   position: relative;
 }
 
-/* Container for the new releases section */
 .new-releases {
   border-radius: var(--border-radius);
   background-color: transparent;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: auto;
-  height: auto;
-  padding: 20px;
+  padding: 10px;
+  justify-content: space-between;
 }
 
-.img-card {
+.new-releases img {
+  width: 60%;
   border-radius: var(--border-radius);
-  height: auto;
-  width: 80%; /* Use this to control the container */
 }
 
-/* On hover scales the image up and add a border radius adds drop shadow */
-.img-card:hover {
+/* Image hover effect */
+.new-releases img:hover {
   transition: transform 0.2s ease-in-out;
   transform: scale(1.1);
   filter: drop-shadow(1rem 1rem 3rem rgba(0, 0, 0, 0.5));
 }
+
+.section5 {
+  background-image: url("../media/assets/othercontent/popcorn-and-a-drink-laughing-together.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 800px;
+}
+
+.call-to-action {
+  /* Call to action button used for hero  */
+  width: 300px;
+  height: 50px;
+  border-radius: var(--border-radius);
+  background-color: gold;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  font-size: 30px;
+}
+
 /* -------------------------------------------*/
 /* -------->>> =Main content------------------*/
 /* ------------=Videos Page <<<---------------*/
@@ -208,11 +223,10 @@ img {
 .movie-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-  gap: 20px; /* Adds a 20px gap between grid items */
+  gap: 10px;
   justify-content: center;
 }
 
-/* Styles for movie cards */
 .movie-card {
   display: flex;
   flex-direction: column;
@@ -225,7 +239,6 @@ img {
   box-shadow: 0 0 2px #ccc;
 }
 
-/* Hover effect for movie cards */
 .movie-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 5px #ccc;
@@ -240,13 +253,27 @@ img {
 .movie-card label {
   margin-top: 10px;
   text-align: left;
-
   color: var(--body-text-color);
   padding: 0 10px;
+  height: 100%;
+  word-break: keep-all;
 }
 
-/* Button style videos page*/
-.button-style-videos {
+.button-categorys,
+.button-categorys > a {
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: var(--button-background-color-prodpage);
+  color: var(--btn-text-color-card);
+  border-radius: var(--border-radius);
+}
+
+.button-categorys > a:hover {
+  background-color: #016767;
+}
+.video-button {
+  /* Button style videos page*/
+
   background-color: var(--button-background-color-prodpage);
   color: var(--btn-text-color-card);
   padding: 10px 20px;
@@ -255,26 +282,22 @@ img {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
-  position: relative;
-  bottom: 0;
+  width: 100%;
+  height: 130px;
 }
 
-/* Small fix to keep the buttons at the bottom of the container */
-.movie-card label {
-  height: 100%;
-  word-break: keep-all;
-}
-
-.button-style-videos:hover {
+.video-button:hover {
   background-color: #016767;
 }
 
-.category-buttons {
-  display: flex;
-  justify-content: center; /* Center align the buttons */
-  flex-wrap: wrap;
-  margin: 10px;
+.video-button span {
+  padding: 10px;
 }
+
+/* --------------------------------------------*/
+/* -------->>> =Main content-------------------*/
+/* ------------=About page <<<-----------------*/
+/* --------------------------------------------*/
 
 /* --------------------------------------------*/
 /* -------->>> =Main content-------------------*/
@@ -288,14 +311,14 @@ img {
   box-shadow: 3px 3px 3px 3px black;
 }
 
-/* container for the movie title, rating, and overview */
 .overview {
+  /* container for the movie title, rating, and overview */
   margin: 30px;
 }
 
 iframe {
   /* Youtube video */
-  border: none; /* Removes border, all youtube links have a border that looks ugly */
+  border: none;
   margin: 40px;
   height: 400px;
   width: 50%;
@@ -305,7 +328,8 @@ iframe {
 
 .star-rating {
   color: var(--star-rating-color);
-  font-variation-settings: "FILL" 1; /* This fills the stars with color */
+  /* This fills the star icons */
+  font-variation-settings: "FILL" 1;
 }
 
 /* -----------------------------------------*/
@@ -383,32 +407,34 @@ iframe {
 /* -----------------------------------*/
 /* -------->>> =Footer <<<------------*/
 /* -----------------------------------*/
-/* All footer styling here */
+
 .footer-container {
   justify-content: space-between;
-  margin: 0 150px; /* Margin 150px on both sides to follow the main layout */
+  margin: 0 150px;
   height: 100%;
 }
 
 footer h3 {
-  /* Targets all h3 elements (the text on top of the links) */
+  /* Targets all h3 elements (the text on top of the links) in the footer */
   color: white;
 }
 
-/* Targets links, aligns them with the icon */
 .socials a {
+  /* Targets links, aligns them with the icon
+  less code to make a new class here rather than
+  reuse previous flex classes. */
   display: flex;
   align-items: center;
 }
 
-/* Social media icon img */
 .socials img {
+  /* Social media icon img */
   margin: 4px;
   width: 20%;
 }
 
-/* Reusing my form styles and tweak the height, width */
 .newsletter.form-container.form-wrapper {
+  /* Reusing my form style and tweak the height, width */
   width: 300px;
   height: 150px;
 }
@@ -416,19 +442,6 @@ footer h3 {
 /* --------------------------------------*/
 /* -------->>> =Reusables <<<------------*/
 /* --------------------------------------*/
-
-.button {
-  /* Main button styling reuse this */
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 4px 2px;
-  font-size: 16px;
-  border-radius: 5px;
-  background-color: #0711dd;
-  color: white;
-}
 
 .flex {
   /* Reuse this for flexbox */
@@ -481,7 +494,7 @@ footer h3 {
   font-variation-settings: "FILL" 1;
 }
 
-/*This is margin 10px top and bottom reuse this where needed*/
+/* Margin 10px top and bottom reuse this where needed*/
 .margin-column-row {
   margin: 20px 0;
 }
@@ -491,7 +504,7 @@ footer h3 {
 }
 
 .horizontal-line {
-  /* This is styling for the HR tag between sections on the main page*/
+  /* Styling for the HR tag between sections on the main page*/
   border: none;
   height: 5px;
   background: var(--horizontal-line-color);
@@ -530,7 +543,7 @@ h1 {
 h2,
 h3,
 h4 {
-  font-size: 29.3336px;
+  font-size: 29.3px;
   line-height: 37.3264px;
   font-weight: 700;
 }
@@ -544,12 +557,17 @@ p {
 label {
   font-size: 18.62px;
 }
+
+.white-text {
+  /* Custom class for turning text white where its hard to see black text */
+  color: white;
+}
 /* ------------------------------------*/
 /* -------->>> =Forms <<<--------------*/
 /* ------------------------------------*/
 
-/* main container for the forms */
 .form-container {
+  /* main form container styling*/
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -561,14 +579,14 @@ label {
   border: 1px solid #fff;
 }
 
-/* Wrapper container for the form */
 .form-wrapper {
+  /* Wrapper container for the form */
   justify-content: center;
   margin: 10px;
 }
 
-/* Styling for all the inputs in forms */
 .form-wrapper input {
+  /* Styling for all the inputs in forms */
   margin-bottom: 10px;
   width: 100%;
   padding: 10px;
@@ -576,10 +594,24 @@ label {
   border: none;
   box-shadow: 0 0 5px #ccc;
 }
-/* To make message box bigger on the contact page */
+
 #message {
+  /* Quick fix to make message box bigger on the contact page */
   width: 100%;
   height: 150px;
+}
+
+.button {
+  /* Main button styling forms*/
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #0711dd;
+  color: white;
 }
 
 /* --------------------------------------*/
@@ -603,7 +635,6 @@ label {
       "footer";
   }
 
-  /* -- navigation__menu -- */
   .nav-buttons {
     /* Hides the main nav links on mobile */
     display: none;
@@ -653,7 +684,6 @@ label {
     display: none;
   }
 
-  /*-- Form styling --*/
   .form-container {
     width: 70%;
     height: auto;
@@ -820,15 +850,4 @@ label {
     line-height: 21.33px;
     letter-spacing: 0.66px;
   }
-}
-
-/* Desktop media querys */
-@media (min-width: 1024px) {
-  /* Typography */
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-}
-
-@media screen and (min-width: 1024px) {
 }

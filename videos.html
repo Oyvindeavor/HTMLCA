@@ -26,7 +26,7 @@
 
 <body>
   <header>
-    <div class="header-container flex align-items-center">
+    <div class="header-container">
       <!--Logo-->
       <div class="logo">
         <a href="index.html"><img src="media/logo.png"
@@ -39,7 +39,7 @@
             <a class="nav-buttons" href="index.html">Home</a>
           </li>
           <li>
-            <a class="nav-buttons" href="videos.html">Videos</a>
+            <a class="nav-buttons active" href="videos.html">Videos</a>
           </li>
           <li>
             <a class="nav-buttons" href="about.html">About</a>
@@ -84,173 +84,187 @@
   </header>
   <main>
     <!--Movie category buttons-->
-    <div class="main-content">
-      <div class="category-buttons">
-        <a class="button-style-videos" href="#">All</a>
-        <a class="button-style-videos" href="#">Action</a>
-        <a class="button-style-videos" href="#">Adventure</a>
-        <a class="button-style-videos" href="#">Animation</a>
-        <a class="button-style-videos" href="#">Comedy</a>
-        <a class="button-style-videos" href="#">Horror</a>
-        <a class="button-style-videos" href="#">Fantasy</a>
-        <a class="button-style-videos" href="#">Romance</a>
+    <div class="button-categorys center">
+      <span class="material-symbols-outlined"> category </span>
+      <a href="#">All</a>
+      <a href="#">Action</a>
+      <a href="#">Adventure</a>
+      <a href="#">Animation</a>
+      <a href="#">Comedy</a>
+      <a href="#">Horror</a>
+      <a href="#">Fantasy</a>
+      <a href="#">Romance</a>
+    </div>
+    <!--Movie cards grid-->
+    <div class="movie-cards-grid">
+      <!--Movie card-->
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/the-batman-2022.jpg" alt="The Batman Movie Poster">
+        </a>
+        <h2>The Batman</h2>
+        <h4>19.99$</h4>
+        <label> In his second year as a crime-fighter, Batman discovers Gotham corruption tied to
+          his family, battling the Riddler. </label>
+        <a class="video-button center" href="cart.html">Add to cart<span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
       </div>
-      <!--Movie cards grid-->
-      <div class="movie-cards-grid">
-        <!--Movie card-->
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/the-batman-2022.jpg" alt="The Batman Movie Poster">
-          </a>
-          <h2>The Batman</h2>
-          <h4>19.99$</h4>
-          <label> In his second year as a crime-fighter, Batman discovers Gotham corruption tied to
-            his family, battling the Riddler. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/godzilla-king-of-the-monsters-2019.jpeg"
-              alt="Godzilla 2019 Movie Poster">
-          </a>
-          <h2>Godzilla</h2>
-          <h4>9.99$</h4>
-          <label>Monarch battles god-sized monsters, Godzilla, Mothra, Rodan, and King Ghidorah,
-            threatening humanity.</label>
-          <a class="button-style-videos center" href="cart.html">Add to Cart <span
-              class="material-symbols-outlined"> add_shopping_cart </span></a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/gangster-squad-2013.jpg" alt="Gangster Squad 2013 Movie Poster">
-          </a>
-          <h2>Gangster Squad</h2>
-          <h4>6.99$</h4>
-          <label> In 1949 LA, mob king Mickey Cohen rules with corrupt cops, but a secret LAPD crew
-            aims to stop him. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/amundsen-2019.jpg" alt="Amundsen 2019 Movie Poster">
-          </a>
-          <h2>Amundsen</h2>
-          <h4>10.99$</h4>
-          <label> Roald Amundsen's polar expeditions, from conquering the South Pole in 1911 to his
-            ultimate sacrifice in 1926. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/her-2014.jpg" alt="Her 2014 Movie Poster">
-          </a>
-          <h2>Her</h2>
-          <h4>14.99$</h4>
-          <label>In a near-future, a writer falls for an AI, exploring love and tech's impact.
-          </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/shrek-forever-after-2010.jpeg"
-              alt="Shrek Forever After 2010 Movie Poster">
-          </a>
-          <h2>Shrek Forever After</h2>
-          <h4>14.99$</h4>
-          <label> Shrek makes a pact, but a twist in Far Far Away changes everything.</label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/the-great-gatsby-2013.jpg"
-              alt="The Great Gatsby 2013 Movie Poster">
-          </a>
-          <h2>The Great Gatsby</h2>
-          <h4>14.99$</h4>
-          <label> Nick enters Gatsby's opulent world but uncovers obsession, madness, and tragedy.
-          </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/epic-2013.jpg" alt="Epic 2013 Movie Poster">
-          </a>
-          <h2>Epic</h2>
-          <h4>4.99$</h4>
-          <label> A teen joins a group to save both worlds in a forest battle of good vs. evil.
-          </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/the-addams-family-2019.jpg"
-              alt="The Addams Family 2019 Movie Poster">
-          </a>
-          <h2>The Addams Family</h2>
-          <h4>6.99$</h4>
-          <label> The Addams family confronts a greedy reality-TV host amid celebration chaos.
-          </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/scream-2022.jpg" alt="Scream 2019 Movie Poster">
-          </a>
-          <h2>Scream</h2>
-          <h4>10.99$</h4>
-          <label> A new Ghostface killer terrorizes Woodsboro, targeting teens and old secrets.
-          </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/hobbs-&-shaw-2019.jpeg" alt="Hobbs & Shaw 2019 Movie Poster">
-          </a>
-          <h2>Hobbs & Shaw</h2>
-          <h4>6.99$</h4>
-          <label> Hobbs and Shaw unite to stop enhanced anarchist Brixton.</label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/j-t-leroy-2019.jpg" alt="J.T Leroy 2019 Movie Poster">
-          </a>
-          <h2>J.T.Leroy</h2>
-          <h4>9.99$</h4>
-          <label> Savannah Knoop pretends as JT Leroy, her sister-in-law's made-up transgender
-            writer, for six years. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/lamborghini-2022.jpg" alt="lamborghini 2022 Movie Poster">
-          </a>
-          <h2>lamborghini</h2>
-          <h4>6.99$</h4>
-          <label> Discover Lamborghini's evolution from tractor maker and wartime vehicle creator to
-            the luxury sports car brand, Automobili Lamborghini, in 1963. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/predators-2010.jpeg" alt="Predators 2010 Movie Poster">
-          </a>
-          <h2>Predators</h2>
-          <h4>8.99$</h4>
-          <label> A group of cold-blooded killers find themselves trapped on an alien planet to be
-            hunted by extraterrestrial Predators. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
-        <div class="movie-card">
-          <a href="productpage.html">
-            <img src="media/assets/rambo-2008.jpeg" alt="Rambo 2008 Movie Poster">
-          </a>
-          <h2>Rambo</h2>
-          <h4>6.99$</h4>
-          <label> Ex-Green Beret John Rambo leads mercenaries on a rescue mission in war-torn
-            Myanmar. </label>
-          <a class="button-style-videos" href="cart.html">Add to cart</a>
-        </div>
+      <!---->
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/godzilla-king-of-the-monsters-2019.jpeg"
+            alt="Godzilla 2019 Movie Poster">
+        </a>
+        <h2>Godzilla</h2>
+        <h4>9.99$</h4>
+        <label>Monarch battles god-sized monsters, Godzilla, Mothra, Rodan, and King Ghidorah,
+          threatening humanity.</label>
+        <a class="video-button center" href="cart.html">Add to Cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/gangster-squad-2013.jpg" alt="Gangster Squad 2013 Movie Poster">
+        </a>
+        <h2>Gangster Squad</h2>
+        <h4>6.99$</h4>
+        <label> In 1949 LA, mob king Mickey Cohen rules with corrupt cops, but a secret LAPD crew
+          aims to stop him. </label>
+        <a class="video-button center" href="cart.html">Add to cart<span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/amundsen-2019.jpg" alt="Amundsen 2019 Movie Poster">
+        </a>
+        <h2>Amundsen</h2>
+        <h4>10.99$</h4>
+        <label> Roald Amundsen's polar expeditions, from conquering the South Pole in 1911 to his
+          ultimate sacrifice in 1926. </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/her-2014.jpg" alt="Her 2014 Movie Poster">
+        </a>
+        <h2>Her</h2>
+        <h4>14.99$</h4>
+        <label>In a near-future, a writer falls for an AI, exploring love and tech's impact.
+        </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/shrek-forever-after-2010.jpeg"
+            alt="Shrek Forever After 2010 Movie Poster">
+        </a>
+        <h2>Shrek Forever After</h2>
+        <h4>14.99$</h4>
+        <label> Shrek makes a pact, but a twist in Far Far Away changes everything.</label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/the-great-gatsby-2013.jpg"
+            alt="The Great Gatsby 2013 Movie Poster">
+        </a>
+        <h2>The Great Gatsby</h2>
+        <h4>14.99$</h4>
+        <label> Nick enters Gatsby's opulent world but uncovers obsession, madness, and tragedy.
+        </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/epic-2013.jpg" alt="Epic 2013 Movie Poster">
+        </a>
+        <h2>Epic</h2>
+        <h4>4.99$</h4>
+        <label> A teen joins a group to save both worlds in a forest battle of good vs. evil.
+        </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/the-addams-family-2019.jpg"
+            alt="The Addams Family 2019 Movie Poster">
+        </a>
+        <h2>The Addams Family</h2>
+        <h4>6.99$</h4>
+        <label> The Addams family confronts a greedy reality-TV host amid celebration chaos.
+        </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/scream-2022.jpg" alt="Scream 2019 Movie Poster">
+        </a>
+        <h2>Scream</h2>
+        <h4>10.99$</h4>
+        <label> A new Ghostface killer terrorizes Woodsboro, targeting teens and old secrets.
+        </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/hobbs-&-shaw-2019.jpeg" alt="Hobbs & Shaw 2019 Movie Poster">
+        </a>
+        <h2>Hobbs & Shaw</h2>
+        <h4>6.99$</h4>
+        <label> Hobbs and Shaw unite to stop enhanced anarchist Brixton.</label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/j-t-leroy-2019.jpg" alt="J.T Leroy 2019 Movie Poster">
+        </a>
+        <h2>J.T.Leroy</h2>
+        <h4>9.99$</h4>
+        <label> Savannah Knoop pretends as JT Leroy, her sister-in-law's made-up transgender writer,
+          for six years. </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/lamborghini-2022.jpg" alt="lamborghini 2022 Movie Poster">
+        </a>
+        <h2>lamborghini</h2>
+        <h4>6.99$</h4>
+        <label> Discover Lamborghini's evolution from tractor maker and wartime vehicle creator to
+          the luxury sports car brand, Automobili Lamborghini, in 1963. </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/predators-2010.jpeg" alt="Predators 2010 Movie Poster">
+        </a>
+        <h2>Predators</h2>
+        <h4>8.99$</h4>
+        <label> A group of cold-blooded killers find themselves trapped on an alien planet to be
+          hunted by extraterrestrial Predators. </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
+      </div>
+      <div class="movie-card">
+        <a href="productpage.html">
+          <img src="media/assets/rambo-2008.jpeg" alt="Rambo 2008 Movie Poster">
+        </a>
+        <h2>Rambo</h2>
+        <h4>6.99$</h4>
+        <label> Ex-Green Beret John Rambo leads mercenaries on a rescue mission in war-torn Myanmar.
+        </label>
+        <a class="video-button center" href="cart.html">Add to cart <span
+            class="material-symbols-outlined"> add_shopping_cart </span></a>
       </div>
     </div>
   </main>
