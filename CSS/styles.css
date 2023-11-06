@@ -46,14 +46,8 @@
   /*Button background color on product page */
   --button-background-color-prodpage: #0a1e3e;
 
-  /* Link color */
-  --link-color: rgb(0, 0, 0);
-
   /* Button text color on moviecards (videos page) */
   --btn-text-color-card: #fff;
-
-  /* Color for the hamnurger sidebar */
-  --sidebar-color: #ccc;
 
   /* Border radius for images/buttons/divs */
   --border-radius: 10px;
@@ -159,8 +153,6 @@ img {
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
-.logo {
-}
 /* -----------------------------------------*/
 /* -------->>> =Main content----------------*/
 /* ------------=Home page <<<---------------*/
@@ -194,22 +186,54 @@ img {
   filter: drop-shadow(1rem 1rem 3rem rgba(0, 0, 0, 0.5));
 }
 
+#macbook-pro-img {
+  /* Macbook pro image */
+
+  border-radius: var(--border-radius);
+
+  width: 30%;
+  object-fit: cover;
+}
+
+.text-container {
+  width: 40%;
+}
+
+#ipad-mini-img {
+}
+
+.section5 img {
+  width: 40%;
+  border-radius: 5px;
+}
+
 .section5 {
-  background-image: url("../media/assets/othercontent/popcorn-and-a-drink-laughing-together.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 800px;
+  flex-direction: row;
+}
+
+.section3 img {
+  width: 40%;
 }
 
 .call-to-action {
   /* Call to action button used for hero  */
-  width: 300px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--border-radius);
-  background-color: gold;
+  background-color: red;
   font-weight: 700;
   font-family: var(--font-secondary);
   font-size: 30px;
+  text-align: center;
+  transition: background-color 0.3s;
+  color: gold;
+}
+
+.call-to-action:hover {
+  background-color: yellow;
+  color: black;
 }
 
 /* -------------------------------------------*/
@@ -247,25 +271,22 @@ img {
   height: 300px;
 }
 
-/* ------------=Text Video Page <<<---------------*/
-/* Description text for the movie cards */
 .movie-card > label {
+  /* Description text for the movie cards */
   margin-top: 10px;
   text-align: left;
   color: var(--body-text-color);
   padding: 0 10px;
   height: 100%;
-  word-break: keep-all;
+  padding-bottom: 10px;
   font-size: 16px;
   font-family: var(--font-primary);
 }
 
-/* Title description movies */
 .movie-card > h2 {
+  /* Title description movies */
   font-size: 20px;
 }
-
-/* ------------=Buttons Video Page <<<---------------*/
 
 .button-categorys {
   background-color: var(--button-background-color-prodpage);
@@ -283,8 +304,8 @@ img {
   font-family: poppins;
 }
 
-/* Custom class to remove margin */
 .horizontal-line.no-margin-top {
+  /* Custom class to remove margin and add */
   margin: 0;
   margin-bottom: 30px;
 }
@@ -315,7 +336,6 @@ img {
 
 .category.active {
   /* active class for the category buttons */
-
   border: #008787 solid 1px;
 }
 
@@ -336,11 +356,6 @@ img {
 .page-icon > a {
   color: white;
 }
-
-/* --------------------------------------------*/
-/* -------->>> =Main content-------------------*/
-/* ------------=About page <<<-----------------*/
-/* --------------------------------------------*/
 
 /* --------------------------------------------*/
 /* -------->>> =Main content-------------------*/
@@ -466,17 +481,23 @@ iframe {
   height: 100%;
 }
 
+.footer-container a {
+  color: #007bff;
+}
+
+.copyright {
+  color: #016767;
+}
+
 footer h3 {
   /* Targets all h3 elements (the text on top of the links) in the footer */
   color: white;
 }
 
 .socials a {
-  /* Targets links, aligns them with the icon
-  less code to make a new class here rather than
-  reuse previous flex classes. */
   display: flex;
   align-items: center;
+  color: #007bff;
 }
 
 .socials img {
@@ -491,9 +512,9 @@ footer h3 {
   height: 150px;
 }
 
-/* --------------------------------------*/
-/* -------->>> =Reusables <<<------------*/
-/* --------------------------------------*/
+/* --------------------------------------------*/
+/* -------->>> =Reusable Toolbox<<<------------*/
+/* --------------------------------------------*/
 
 .flex {
   /* Reuse this for flexbox */
