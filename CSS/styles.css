@@ -188,7 +188,6 @@ img {
   border-radius: var(--border-radius);
 }
 
-/* Image hover effect */
 .new-releases img:hover {
   transition: transform 0.2s ease-in-out;
   transform: scale(1.1);
@@ -248,30 +247,53 @@ img {
   height: 300px;
 }
 
-.movie-card label {
+/* ------------=Text Video Page <<<---------------*/
+/* Description text for the movie cards */
+.movie-card > label {
   margin-top: 10px;
   text-align: left;
   color: var(--body-text-color);
   padding: 0 10px;
   height: 100%;
   word-break: keep-all;
+  font-size: 16px;
+  font-family: var(--font-primary);
 }
 
-.button-categorys,
-.button-categorys > a {
-  flex-wrap: wrap;
-  padding: 10px 20px;
+/* Title description movies */
+.movie-card > h2 {
+  font-size: 20px;
+}
+
+/* ------------=Buttons Video Page <<<---------------*/
+
+.button-categorys {
   background-color: var(--button-background-color-prodpage);
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.button-categorys a {
+  padding: 10px;
   color: var(--btn-text-color-card);
+  width: 100px;
   border-radius: var(--border-radius);
+  text-align: center;
+  width: 100px;
+  font-family: poppins;
+}
+
+/* Custom class to remove margin */
+.horizontal-line.no-margin-top {
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .button-categorys > a:hover {
   background-color: #016767;
 }
 .video-button {
-  /* Button style videos page*/
-
+  /* Button below each product card" */
   background-color: var(--button-background-color-prodpage);
   color: var(--btn-text-color-card);
   padding: 10px 20px;
@@ -280,8 +302,6 @@ img {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
-  width: 100%;
-  height: 130px;
 }
 
 .video-button:hover {
@@ -289,12 +309,13 @@ img {
 }
 
 .video-button span {
+  /* Add padding to the cart icon  */
   padding: 10px;
 }
 
-/* active class for the category buttons */
 .category.active {
-  text-decoration: underline;
+  /* active class for the category buttons */
+
   border: #008787 solid 1px;
 }
 
