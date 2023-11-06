@@ -368,10 +368,19 @@ iframe {
   text-align: center;
 }
 
+.breadcrumb-cart > li {
+  color: rgba(0, 0, 0, 0.576);
+}
+
 .breadcrumb-cart span {
   /* Styling for the breadcrumb icons (arrow) */
   font-size: var(--breadcrumb-icon-size);
   font-weight: 700;
+}
+
+.breadcrumb-item.active {
+  color: black;
+  font-weight: bold;
 }
 
 .wrapper-cart-section1 {
