@@ -186,20 +186,8 @@ img {
   filter: drop-shadow(1rem 1rem 3rem rgba(0, 0, 0, 0.5));
 }
 
-#macbook-pro-img {
-  /* Macbook pro image */
-
-  border-radius: var(--border-radius);
-
-  width: 30%;
-  object-fit: cover;
-}
-
 .text-container {
   width: 40%;
-}
-
-#ipad-mini-img {
 }
 
 .section5 img {
@@ -213,6 +201,26 @@ img {
 
 .section3 img {
   width: 40%;
+}
+
+.illustration-imgs {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#macbook-pro-img {
+  width: 40%;
+}
+
+#ipad-img {
+  width: 30%;
+}
+
+#iphone-img {
+  width: 20%;
 }
 
 .call-to-action {
@@ -471,6 +479,11 @@ iframe {
   border-radius: var(--border-radius);
 }
 
+#empty-cart-img {
+  width: 40%;
+  border-radius: 5px;
+  margin-top: 20px;
+}
 /* -----------------------------------*/
 /* -------->>> =Footer <<<------------*/
 /* -----------------------------------*/
@@ -722,6 +735,17 @@ label {
     height: 100px;
   }
 
+  .header-container {
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
   /* Hamburger menu */
   .hamburger {
     display: block; /* Shows the hamburger menu on mobile */
@@ -743,6 +767,10 @@ label {
     filter: box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
   }
 
+  .hamburger-menu a {
+    color: #008787;
+  }
+
   input#hamburger-on:checked + label.hamburger-menu + aside.hamburger-menu {
     left: 0;
   }
@@ -755,6 +783,10 @@ label {
   input[type="checkbox"] {
     /* Hides the checkbox */
     display: none;
+  }
+
+  .section5 {
+    flex-direction: column;
   }
 
   .form-container {
@@ -839,6 +871,7 @@ label {
   }
 
   /* Change the header to be fixed so it follow you while scrolling on mobile */
+  /* Change the header to be fixed so it follow you while scrolling on mobile  */
   header {
     display: flex;
     position: fixed;
@@ -847,10 +880,21 @@ label {
     height: 100px;
   }
 
+  .header-container {
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
   /* Hamburger menu */
   .hamburger {
     display: block; /* Shows the hamburger menu on mobile */
-    position: fixed; /* This is so the hamburger menu stays fixed on the screen */
+    position: fixed; /* This is so the hamburger menu stays fixed on the screen along with the header */
     left: 0;
     z-index: 1;
   }
@@ -866,6 +910,10 @@ label {
     transition: left 0.3s ease;
     font-size: 40px;
     filter: box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+
+  .hamburger-menu a {
+    color: #008787;
   }
 
   input#hamburger-on:checked + label.hamburger-menu + aside.hamburger-menu {
