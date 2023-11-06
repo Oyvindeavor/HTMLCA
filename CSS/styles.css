@@ -294,6 +294,30 @@ img {
   padding: 10px;
 }
 
+/* active class for the category buttons */
+.category.active {
+  text-decoration: underline;
+  border: #008787 solid 1px;
+}
+
+.page-icon .material-symbols-outlined.size {
+  /* This is the size for the icons on the pagination */
+  font-size: 20px;
+  color: blue;
+  margin: 50px 10px;
+}
+
+.page-icon .material-symbols-outlined.size.active {
+  /* This is the size for the icons on the pagination */
+  font-size: 20px;
+  color: black;
+  margin: 50px 10px;
+}
+
+.page-icon > a {
+  color: white;
+}
+
 /* --------------------------------------------*/
 /* -------->>> =Main content-------------------*/
 /* ------------=About page <<<-----------------*/
